@@ -1,14 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="number_map.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Game.cs">
     <Files>
-      <File FileName="number_map.cs" Line="32" Column="5" />
+      <File FileName="Scripts/Game.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Risk__Game" expanded="True">
             <Node name="Risk__Game" expanded="True">
-              <Node name="number_map.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Game.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
