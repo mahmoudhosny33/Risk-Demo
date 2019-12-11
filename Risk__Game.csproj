@@ -49,8 +49,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Scripts\Game.cs" />
     <Compile Include="Scripts\number_map.cs" />
+    <Compile Include="Scripts\Root.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
