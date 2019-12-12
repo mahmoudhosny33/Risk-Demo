@@ -42,6 +42,27 @@ public class Game : Sprite
 
         }
     }
+    public void DeactivationMode(ref Country country)
+    {
+        if (country.player.color == Colors.Red)
+        {
+            country.player.color = Colors.DarkRed;
+            Brush(ref country);
+
+        }
+        else if (country.player.color == Colors.Green)
+        {
+            country.player.color = Colors.DarkGreen;
+            Brush(ref country);
+
+        }
+        else if (country.player.color == Colors.Violet)
+        {
+            country.player.color = Colors.DarkViolet;
+            Brush(ref country);
+
+        }
+    }
 
     public void Brush(ref Country country)
     {
@@ -50,6 +71,14 @@ public class Game : Sprite
 
     }
 
+    public void Rest()
+    {
+        foreach(Country country in Countries)
+        {
+            Country Temp = country;
+            DeactivationMode(ref Temp);
+        }
+    }
 
     public void GetSprite(ref Country country)
     {
@@ -85,11 +114,12 @@ public class Game : Sprite
 
         AddCountry(1,"3",Colors.DarkRed,0, new List<string> { "1", "6","2","5"});
 
-        AddCountry(1, "4", Colors.Red, 0, new List<string> { "1", "5" });
+        AddCountry(1, "4", Colors.DarkRed, 0, new List<string> { "1", "5" });
 
         AddCountry(1, "5", Colors.DarkRed, 0, new List<string> { "1", "3", "4" });
 
-     
+        AddCountry(2, "6", Colors.DarkGreen, 0, new List<string> { "11", "10", "2","1","3" });
+
 
     }
 
@@ -97,17 +127,18 @@ public class Game : Sprite
     {
         if (Input.IsActionPressed("LM"))
         {
+            Rest();
             foreach(Country country in Countries)
             {
                 if (country.name == name)
                 {
-                    country.player.color = Colors.Red;
                     Country Temp = country;
-                    Brush(ref Temp);
+                    ActivationMode(ref Temp);
                 }
             }
         
         }
+        
     }
         
 }
