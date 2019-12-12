@@ -48,8 +48,8 @@ public class Game : Sprite
         foreach (Country temp in country.ConnectedTo)
         {
             //GD.Print(temp.name);
-           // Country TempCountry = temp;
-           // ToLight(ref TempCountry);
+           Country TempCountry = temp;
+           ToLight(ref TempCountry);
         }
 
     }
