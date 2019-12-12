@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A45B801-5EBC-4A24-BEE2-90005A30B308}</ProjectGuid>
+    <ProjectGuid>{6ADBDB60-5623-4675-BA09-54C602C0416B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
     <RootNamespace>Risk__Game</RootNamespace>
@@ -49,6 +49,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\Game.cs" />
     <Compile Include="Scripts\number_map.cs" />
     <Compile Include="Scripts\Root.cs" />
   </ItemGroup>

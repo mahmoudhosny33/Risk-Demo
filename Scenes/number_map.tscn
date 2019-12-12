@@ -3,7 +3,7 @@
 [ext_resource path="res://TileMap/Num.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/number_map.cs" type="Script" id=2]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -15,10 +15,10 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 3 )
+shader = SubResource( 1 )
 shader_param/whitening = 0.0
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 38.8461
 
 [node name="numofmap" type="TileMap"]
@@ -37,7 +37,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -50,7 +50,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -63,7 +63,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -76,7 +76,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -89,7 +89,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -102,7 +102,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -115,7 +115,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -128,7 +128,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -141,7 +141,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -154,7 +154,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -167,7 +167,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -180,7 +180,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D12"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -193,7 +193,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D13"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -206,7 +206,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D14"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -219,7 +219,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D15"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -232,7 +232,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D16"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -245,7 +245,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D17"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -258,7 +258,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D18"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -271,7 +271,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D19"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -284,7 +284,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D20"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -297,7 +297,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D21"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -310,7 +310,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D22"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -323,7 +323,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D23"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -336,7 +336,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D24"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -349,7 +349,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D25"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -362,7 +362,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D26"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -375,7 +375,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D27"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -388,7 +388,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D28"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -401,7 +401,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D29"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -414,7 +414,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D30"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -427,7 +427,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D31"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -440,7 +440,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D32"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -453,7 +453,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D33"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -466,7 +466,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D34"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -479,7 +479,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D35"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -492,7 +492,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D36"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -505,7 +505,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D37"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -518,7 +518,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D39"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -531,7 +531,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D40"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -544,7 +544,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D41"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -557,7 +557,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D42"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -570,13 +570,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D38"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
-[connection signal="input_event" from="Area2D2" to="." method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Area2D2" to="." method="_on_Area2D_input_event" flags=3]
 [connection signal="mouse_entered" from="Area2D2" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="input_event" from="Area2D3" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D3" to="." method="_on_Area2D_mouse_entered"]

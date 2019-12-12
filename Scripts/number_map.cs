@@ -27,9 +27,11 @@ public override void _Process(float delta)
     }
 	private void _on_Area2D_input_event(object viewport, object @event, int shape_idx)
 	{
-           if(Input.IsActionJustPressed("LM")) 
-				GD.Print("ANA Dost YA BASHA");
-	}
+        if(Input.IsActionJustPressed("LM"))
+        {
+            GD.Print(GetChild(shape_idx));
+        }
+    }
 
 
 }

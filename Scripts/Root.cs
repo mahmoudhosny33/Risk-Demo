@@ -14,12 +14,8 @@ public class Root : Node2D
     }
 
 
-  public override void _Process(float delta)
-  {
-        TileMap tileMap = (GetNode("risk/TileMap") as TileMap);
+  //public override void _Process(float delta)
+  //{
 
-        Vector2 mouse_pos = tileMap.GetLocalMousePosition();
-
-        GD.Print(mouse_pos);
-  }
+  //}
 }
