@@ -16,7 +16,7 @@
 [ext_resource path="res://Images/World/اوربا/w3(asi).png" type="Texture" id=14]
 [ext_resource path="res://Images/World/اسيا/m1(asi).png" type="Texture" id=15]
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -26,8 +26,8 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/whitening = 1.0
 
 [sub_resource type="Shader" id=3]
@@ -40,8 +40,22 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=4]
 shader = SubResource( 3 )
+shader_param/whitening = 1.0
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float whitening;
+
+void fragment() {
+    vec4 texture_color = texture(TEXTURE, UV);
+    COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
 shader_param/whitening = 1.0
 
 [sub_resource type="Shader" id=7]
@@ -86,20 +100,6 @@ void fragment() {
 shader = SubResource( 11 )
 shader_param/whitening = 1.0
 
-[sub_resource type="Shader" id=13]
-code = "shader_type canvas_item;
-
-uniform float whitening;
-
-void fragment() {
-    vec4 texture_color = texture(TEXTURE, UV);
-    COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
-}"
-
-[sub_resource type="ShaderMaterial" id=14]
-shader = SubResource( 13 )
-shader_param/whitening = 1.0
-
 [node name="Sprites" type="Node2D"]
 
 [node name="Game" type="Sprite" parent="."]
@@ -112,7 +112,7 @@ __meta__ = {
 
 [node name="1" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 5 )
+material = SubResource( 2 )
 position = Vector2( 60.2765, 116.27 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -127,7 +127,7 @@ polygon = PoolVector2Array( 34, -70.2, 34, -56.5, 80, -56.5, 80, -37.5, 78.5, -3
 
 [node name="2" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 6 )
+material = SubResource( 4 )
 position = Vector2( -19.1338, -33.9711 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -142,7 +142,7 @@ polygon = PoolVector2Array( 2, -39.9, 20.4, -32.5, 26.1, -32.5, 53, -29.3, 53, -
 
 [node name="3" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 8 )
+material = SubResource( 6 )
 position = Vector2( -34.0194, 137.628 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -157,7 +157,7 @@ polygon = PoolVector2Array( 16.5, -75.5, 18.7, -71, 20, -71, 34.5, -63.2, 34.5, 
 
 [node name="4" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 10 )
+material = SubResource( 8 )
 position = Vector2( 145.497, 261.897 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -172,7 +172,7 @@ polygon = PoolVector2Array( 37.5, 17, 35.5, 17, 17.5, 33.3, 17.5, 34.9, 4.9, 67,
 
 [node name="5" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 12 )
+material = SubResource( 10 )
 position = Vector2( -8.19299, 267.652 )
 texture = ExtResource( 7 )
 __meta__ = {
@@ -188,7 +188,7 @@ polygon = PoolVector2Array( -44, -102.3, -39.2, -94, -36.3, -94, -15, -95.3, -15
 
 [node name="6" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( -127.402, 8.79712 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -203,7 +203,7 @@ polygon = PoolVector2Array( 56.5, -87.3, 56.5, -84.6, 44.5, -74.6, 49.8, -66.7, 
 
 [node name="7" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( 92.5834, -62.8052 )
 texture = ExtResource( 9 )
 __meta__ = {
@@ -218,7 +218,7 @@ polygon = PoolVector2Array( 98, -80.9, 98, -74.9, 94.7, -61.4, 104, -45.1, 104, 
 
 [node name="8" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( 259.371, -69.8032 )
 texture = ExtResource( 10 )
 __meta__ = {
@@ -233,7 +233,7 @@ polygon = PoolVector2Array( 8.5, -97.5, 12.7, -73.5, 13.6, -73.5, 52.5, -55.7, 5
 
 [node name="9" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( 384.171, -28.981 )
 texture = ExtResource( 11 )
 __meta__ = {
@@ -248,7 +248,7 @@ polygon = PoolVector2Array( 17, -71.6, 36, -58.6, 36, -54.6, 37.7, -41, 32.7, -4
 
 [node name="10" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( -59.7578, -162.678 )
 texture = ExtResource( 12 )
 __meta__ = {
@@ -263,7 +263,7 @@ polygon = PoolVector2Array( 58, -59.6, 61, -58.6, 61, 18.1, 42, 38, 42, 39.9, 38
 
 [node name="11" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( -173.104, -161.519 )
 texture = ExtResource( 13 )
 __meta__ = {
@@ -278,7 +278,7 @@ polygon = PoolVector2Array( 57.5, -59.9, 57.5, 12, 53.8, 12, 35.5, 15.2, 30.9, 5
 
 [node name="12" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( 66.601, -287.689 )
 texture = ExtResource( 14 )
 __meta__ = {
@@ -293,7 +293,7 @@ polygon = PoolVector2Array( -2.5, -113, -2.5, -110.3, -9.5, -101, -14.2, -101, -
 
 [node name="13" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 14 )
+material = SubResource( 12 )
 position = Vector2( 176.526, -212.831 )
 texture = ExtResource( 15 )
 __meta__ = {

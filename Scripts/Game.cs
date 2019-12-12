@@ -4,8 +4,9 @@ using Godot.Collections;
 
 public class Game : Sprite
 {
-   
-    
+
+
+
     public class Player
     {
         public int id { get; set; }
@@ -14,125 +15,116 @@ public class Game : Sprite
     public class Country
     {
         public Player player = (new Player());
-        public string name { get; set; }
         public int Active { get; set; } //Should be int 0 or 1 or 2
         public List<string> ConnectedToNames {get;set;}
         public List<Country> ConnectedTo = new List<Country>(); //Should be List Of Country List<Country>
     }
 
-    List<Country> Countries = new List<Country>();
+    System.Collections.Generic.Dictionary<string, Country> Countries = new System.Collections.Generic.Dictionary<string, Country>(); 
 
-    public void ToLight(ref Country country)
+    public void ToLight(string name)
     {
-        if (country.player.color == Colors.DarkRed)
+        if (Countries[name].player.color == Colors.DarkRed)
         {
-            country.player.color = Colors.Red;
-            Brush(ref country);
+            Countries[name].player.color = Colors.Red;
+            Brush(name);
         }
-        else if (country.player.color == Colors.DarkGreen)
+        else if (Countries[name].player.color == Colors.DarkGreen)
         {
-            country.player.color = Colors.Green;
-            Brush(ref country);
+            Countries[name].player.color = Colors.Green;
+            Brush(name);
 
         }
-        else if (country.player.color == Colors.DarkViolet)
+        else if (Countries[name].player.color == Colors.DarkViolet)
         {
-            country.player.color = Colors.Violet;
-            Brush(ref country);
+            Countries[name].player.color = Colors.Violet;
+            Brush(name);
 
-        }
-    }
-    public void ActivationMode(ref Country country)
-    {
-        ToLight(ref country);
-        foreach (Country temp in country.ConnectedTo)
-        {
-            //GD.Print(temp.name);
-           Country TempCountry = temp;
-           ToLight(ref TempCountry);
         }
 
     }
-    public void ToDark(ref Country country)
+    public void ActivationMode(string name)
     {
-        if (country.player.color == Colors.Red)
+        ToLight(name);
+        foreach (string neighbor in Countries[name].ConnectedToNames)
         {
-            country.player.color = Colors.DarkRed;
-            Brush(ref country);
+            ToLight(neighbor);
+        }
+
+    }
+    public void ToDark(string name)
+    {
+        if (Countries[name].player.color == Colors.Red)
+        {
+            Countries[name].player.color = Colors.DarkRed;
+            Brush(name);
 
         }
-        else if (country.player.color == Colors.Green)
+        else if (Countries[name].player.color == Colors.Green)
         {
-            country.player.color = Colors.DarkGreen;
-            Brush(ref country);
+            Countries[name].player.color = Colors.DarkGreen;
+            Brush(name);
 
         }
-        else if (country.player.color == Colors.Violet)
+        else if (Countries[name].player.color == Colors.Violet)
         {
-            country.player.color = Colors.DarkViolet;
-            Brush(ref country);
+            Countries[name].player.color = Colors.DarkViolet;
+            Brush(name);
 
         }
     }
-        public void DeactivationMode(ref Country country)
+    public void DeactivationMode(string name)
     {
 
-        ToDark(ref country);
-        foreach (Country temp in country.ConnectedTo)
+        ToDark(name);
+        foreach (string neighbor in Countries[name].ConnectedToNames)
         {
-            Country TempCountry = temp;
-            ToDark(ref TempCountry);
+            ToDark(neighbor);
         }
     }
 
-    public void Brush(ref Country country)
+    public void Brush(string name)
     {
-        Sprite mySprite = (GetNode((country.name)) as Sprite);
-        mySprite.Modulate = country.player.color;
+        Sprite mySprite = (GetNode((name)) as Sprite);
+        try
+        {
+            mySprite.Modulate = (Countries[name].player.color);
+        }
+        catch { GD.Print("Country not found, please add it first"); }
 
     }
 
     public void Rest()
     {
-        foreach(Country country in Countries)
+        foreach(string name in Countries.Keys)
         {
-            Country Temp = country;
-            DeactivationMode(ref Temp);
+            DeactivationMode(name);
         }
     }
 
     public void ConnectCountries()
     {
-
-        foreach (Country country in Countries)
+        foreach(string name in Countries.Keys)
         {
-            foreach (string name in country.ConnectedToNames)
+            foreach(string neighbor in Countries[name].ConnectedToNames)
             {
-
-                foreach (Country temp in Countries)
-                {
-                    if(temp.name==name)
-                    {
-                        country.ConnectedTo.Add(temp);
-                    }
-                }
+                Countries[name].ConnectedTo.Add(Countries[neighbor]);
             }
         }
-
     }
     public void AddCountry(int id,string name,Color color,int Mode,List<string> nodes)
     {
         Country country = new Country();
         country.player.id = id;
-        country.name = name;
-        country.player.color = color;
-        country.Active = Mode;
-        country.ConnectedToNames = nodes;
+         country.player.color = color;
+         country.Active = Mode;
+         country.ConnectedToNames = nodes;
+        Countries.Add(name, country);
 
-        Brush(ref country);
-     
+        Brush(name);
 
-        Countries.Add(country);
+
+
     }
     public override void _Ready()
     {
@@ -162,9 +154,9 @@ public class Game : Sprite
 
         ConnectCountries(); // Graph Builder
 
-        foreach (Country country in Countries[0].ConnectedTo) // Test Graph Builder
+        foreach (string country in Countries["1"].ConnectedToNames) // Test Graph Builder
         {
-            GD.Print("1", " --> ", country.name);
+           GD.Print("1", " --> ", country);
         }
     }
 
@@ -172,16 +164,15 @@ public class Game : Sprite
     {
         if (Input.IsActionPressed("LM"))
         {
-            Rest();
-            foreach(Country country in Countries)
+            Rest(); // Disable Last Action
+            try
             {
-                if (country.name == name)
-                {
-                    Country Temp = country;
-                    ActivationMode(ref Temp);
-                }
+                ActivationMode(name);
             }
-        
+            catch
+            {
+                GD.Print($" Key {name} Not Added Yet Please Add it");
+            }
         }
         
     }
