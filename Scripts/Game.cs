@@ -5,7 +5,7 @@ using Godot.Collections;
 public class Game : Sprite
 {
    
-
+    
     public class Player
     {
         public int id { get; set; }
@@ -15,9 +15,9 @@ public class Game : Sprite
     {
         public Player player = (new Player());
         public string name { get; set; }
-        public bool Active { get; set; }
+        public int Active { get; set; } //Should be int 0 or 1 or 2
         public List<string> ConnectedToNames {get;set;}
-        public List<Sprite> ConnectedTo = new List<Sprite>();
+        public List<Sprite> ConnectedTo = new List<Sprite>(); //Should be List Of Country List<Country>
     }
 
     List<Country> Countries = new List<Country>();
@@ -45,8 +45,8 @@ public class Game : Sprite
 
     public void Brush(ref Country country)
     {
-        Sprite mySprite2 = (GetNode((country.name)) as Sprite);
-        mySprite2.Modulate = country.player.color;
+        Sprite mySprite = (GetNode((country.name)) as Sprite);
+        mySprite.Modulate = country.player.color;
 
     }
 
@@ -55,7 +55,7 @@ public class Game : Sprite
     {
 
         List<string> names = country.ConnectedToNames;
-
+        
         
         foreach (string name in names)
         {
@@ -63,67 +63,33 @@ public class Game : Sprite
             country.ConnectedTo.Add(sprite);
         }
     }
+    public void AddCountry(int id,string name,Color color,int Mode,List<string> nodes)
+    {
+        Country country = new Country();
+        country.player.id = id;
+        country.name = name;
+        country.player.color = color;
+        country.Active = Mode;
+        country.ConnectedToNames = nodes;
 
+        Brush(ref country);
+        GetSprite(ref country);
+
+        Countries.Add(country);
+    }
     public override void _Ready()
     {
-        Country n1 = new Country();
-        n1.player.id = 1;
-        n1.name = "1";
-        n1.player.color = Colors.DarkRed;
-        Sprite mySprite = (GetNode(n1.name) as Sprite);
-        mySprite.Modulate = n1.player.color;
-        n1.Active = false;
-        n1.ConnectedToNames = new List<string> { "6", "2", "5","3","7"}; 
-        Brush(ref n1);
-        GetSprite(ref n1);
+        AddCountry(1, "1", Colors.DarkRed, 0, new List<string> { "6", "2", "5", "3", "7" });
 
-        Country n2 = new Country();
-        n2.player.id = 1;
-        n2.name = "2";
-        n2.player.color = Colors.DarkRed;
-        n2.Active = false;
-        n2.ConnectedToNames = new List<string> { "11", "10", "7", "6", "1" };
-        Brush(ref n2);
-        GetSprite(ref n2);
+        AddCountry(1, "2", Colors.DarkRed, 0, new List<string> { "11", "10", "7", "6", "1" });
 
+        AddCountry(1,"3",Colors.DarkRed,0, new List<string> { "1", "6","2","5"});
 
-        Country n3 = new Country();
-        n3.player.id = 1;
-        n3.name = "3";
-        n3.player.color = Colors.DarkRed;
-        n3.Active = false;
-        n3.ConnectedToNames = new List<string> { "1", "6","2","5"};
-        Brush(ref n3);
-        GetSprite(ref n3);
+        AddCountry(1, "4", Colors.Red, 0, new List<string> { "1", "5" });
 
+        AddCountry(1, "5", Colors.DarkRed, 0, new List<string> { "1", "3", "4" });
 
-        Country n4 = new Country();
-        n4.player.id = 1;
-        n4.name = "4";
-        n4.player.color = Colors.DarkRed;
-        n4.Active = false;
-        n4.ConnectedToNames = new List<string> { "1", "5" };
-        Brush(ref n4);
-        GetSprite(ref n4);
-
-        Country n5 = new Country();
-        n5.player.id = 1;
-        n5.name = "5";
-        n5.player.color = Colors.DarkRed;
-        n5.Active = false;
-        n5.ConnectedToNames = new List<string> { "1", "3","4" };
-        Brush(ref n5);
-        GetSprite(ref n5);
-
-
-
-        Countries.Add(n1);
-        Countries.Add(n2);
-        Countries.Add(n3);
-        Countries.Add(n4); 
-        Countries.Add(n5);
-
-       
+     
 
     }
 
@@ -131,12 +97,17 @@ public class Game : Sprite
     {
         if (Input.IsActionPressed("LM"))
         {
-            GD.Print(name);
+            foreach(Country country in Countries)
+            {
+                if (country.name == name)
+                {
+                    country.player.color = Colors.Red;
+                    Country Temp = country;
+                    Brush(ref Temp);
+                }
+            }
+        
         }
     }
         
 }
-
-
-
-

@@ -14,20 +14,6 @@
 [ext_resource path="res://Images/World/اوربا/s2(au).png" type="Texture" id=12]
 [ext_resource path="res://Images/World/اوربا/s1(au).png" type="Texture" id=13]
 
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-
-uniform float whitening;
-
-void fragment() {
-    vec4 texture_color = texture(TEXTURE, UV);
-    COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 3 )
-shader_param/whitening = 1.0
-
 [sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
 
@@ -42,7 +28,7 @@ void fragment() {
 shader = SubResource( 4 )
 shader_param/whitening = 1.0
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -52,11 +38,11 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 3 )
 shader_param/whitening = 1.0
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -66,11 +52,11 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
 shader_param/whitening = 1.0
 
-[sub_resource type="Shader" id=10]
+[sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -80,11 +66,11 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=11]
-shader = SubResource( 10 )
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
 shader_param/whitening = 1.0
 
-[sub_resource type="Shader" id=12]
+[sub_resource type="Shader" id=11]
 code = "shader_type canvas_item;
 
 uniform float whitening;
@@ -94,8 +80,22 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=13]
-shader = SubResource( 12 )
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 11 )
+shader_param/whitening = 1.0
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform float whitening;
+
+void fragment() {
+    vec4 texture_color = texture(TEXTURE, UV);
+    COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
 shader_param/whitening = 1.0
 
 [node name="Sprites" type="Node2D"]
@@ -110,7 +110,7 @@ __meta__ = {
 
 [node name="1" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 2 )
+material = SubResource( 5 )
 position = Vector2( 60.2765, 116.27 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -125,7 +125,7 @@ polygon = PoolVector2Array( 34, -70.2, 34, -56.5, 80, -56.5, 80, -37.5, 78.5, -3
 
 [node name="2" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 5 )
+material = SubResource( 6 )
 position = Vector2( -19.1338, -33.9711 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -140,7 +140,7 @@ polygon = PoolVector2Array( 2, -39.9, 20.4, -32.5, 26.1, -32.5, 53, -29.3, 53, -
 
 [node name="3" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 7 )
+material = SubResource( 8 )
 position = Vector2( -34.0194, 137.628 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -155,7 +155,7 @@ polygon = PoolVector2Array( 16.5, -75.5, 18.7, -71, 20, -71, 34.5, -63.2, 34.5, 
 
 [node name="4" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 9 )
+material = SubResource( 10 )
 position = Vector2( 145.497, 261.897 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -170,7 +170,7 @@ polygon = PoolVector2Array( 37.5, 17, 35.5, 17, 17.5, 33.3, 17.5, 34.9, 4.9, 67,
 
 [node name="5" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 11 )
+material = SubResource( 12 )
 position = Vector2( -8.19299, 267.652 )
 texture = ExtResource( 7 )
 __meta__ = {
@@ -186,7 +186,7 @@ polygon = PoolVector2Array( -44, -102.3, -39.2, -94, -36.3, -94, -15, -95.3, -15
 
 [node name="6" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( -127.402, 8.79712 )
 texture = ExtResource( 8 )
 __meta__ = {
@@ -201,7 +201,7 @@ polygon = PoolVector2Array( 56.5, -87.3, 56.5, -84.6, 44.5, -74.6, 49.8, -66.7, 
 
 [node name="7" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( 92.5834, -62.8052 )
 texture = ExtResource( 9 )
 __meta__ = {
@@ -216,7 +216,7 @@ polygon = PoolVector2Array( 98, -80.9, 98, -74.9, 94.7, -61.4, 104, -45.1, 104, 
 
 [node name="8" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( 259.371, -69.8032 )
 texture = ExtResource( 10 )
 __meta__ = {
@@ -231,7 +231,7 @@ polygon = PoolVector2Array( 8.5, -97.5, 12.7, -73.5, 13.6, -73.5, 52.5, -55.7, 5
 
 [node name="9" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( 384.171, -28.981 )
 texture = ExtResource( 11 )
 __meta__ = {
@@ -246,7 +246,7 @@ polygon = PoolVector2Array( 17, -71.6, 36, -58.6, 36, -54.6, 37.7, -41, 32.7, -4
 
 [node name="10" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( -59.7578, -162.678 )
 texture = ExtResource( 12 )
 __meta__ = {
@@ -261,7 +261,7 @@ polygon = PoolVector2Array( 58, -59.6, 61, -58.6, 61, 18.1, 42, 38, 42, 39.9, 38
 
 [node name="11" type="Sprite" parent="Game"]
 editor/display_folded = true
-material = SubResource( 13 )
+material = SubResource( 14 )
 position = Vector2( -173.104, -161.519 )
 texture = ExtResource( 13 )
 __meta__ = {
@@ -273,8 +273,14 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Game/11/Area2D"]
 visible = false
 polygon = PoolVector2Array( 57.5, -59.9, 57.5, 12, 53.8, 12, 35.5, 15.2, 30.9, 51, 27.5, 51, 10.6, 68, -57.5, 68, -57.5, 27.8, -55.5, 23.8, -55.5, 20.8, -57.5, 12.3, -57.5, -6, -56.2, -6, -43.2, -16, -38.6, -16, -30.6, -9, -29.2, -9, -20.6, -11.9, -14.3, -22.1, -32.4, -42.1, -29.7, -48, -26.1, -48, -5.1, -50.6, 21, -68, 51.8, -68 )
-[connection signal="input_event" from="Game/1/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "\"1\"" ]]
-[connection signal="input_event" from="Game/2/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "\"2\"" ]]
-[connection signal="input_event" from="Game/3/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "\"3\"" ]]
-[connection signal="input_event" from="Game/4/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "\"4\"" ]]
-[connection signal="input_event" from="Game/5/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "\"5\"" ]]
+[connection signal="input_event" from="Game/1/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "1" ]]
+[connection signal="input_event" from="Game/2/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "2" ]]
+[connection signal="input_event" from="Game/3/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "3" ]]
+[connection signal="input_event" from="Game/4/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "4" ]]
+[connection signal="input_event" from="Game/5/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "5" ]]
+[connection signal="input_event" from="Game/6/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "6" ]]
+[connection signal="input_event" from="Game/7/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "7" ]]
+[connection signal="input_event" from="Game/8/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "8" ]]
+[connection signal="input_event" from="Game/9/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "9" ]]
+[connection signal="input_event" from="Game/10/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "10" ]]
+[connection signal="input_event" from="Game/11/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "11" ]]
