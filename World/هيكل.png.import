@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/هيكل.png-8de6aca47b291651047d8c267ddb71ee.stex"
+path="res://.import/هيكل.png-28eb3118fdc8b3014cee9a48af21d1c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/هيكل.png"
-dest_files=[ "res://.import/هيكل.png-8de6aca47b291651047d8c267ddb71ee.stex" ]
+source_file="res://Images/World/هيكل.png"
+dest_files=[ "res://.import/هيكل.png-28eb3118fdc8b3014cee9a48af21d1c7.stex" ]
 
 [params]
 

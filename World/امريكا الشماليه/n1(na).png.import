@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/n1(na).png-560fc74057b928a54aa5af18397dd70d.stex"
+path="res://.import/n1(na).png-15ad3219ccb6afe1569d094243ddac6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/امريكا الشماليه/n1(na).png"
-dest_files=[ "res://.import/n1(na).png-560fc74057b928a54aa5af18397dd70d.stex" ]
+source_file="res://Images/World/امريكا الشماليه/n1(na).png"
+dest_files=[ "res://.import/n1(na).png-15ad3219ccb6afe1569d094243ddac6d.stex" ]
 
 [params]
 

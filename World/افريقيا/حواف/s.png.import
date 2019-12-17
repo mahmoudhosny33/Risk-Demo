@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/s.png-614f5428f836789142d8dbf0672ef9ee.stex"
+path="res://.import/s.png-f7ad67a3913feaa750556d4762750b76.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/افريقيا/حواف/s.png"
-dest_files=[ "res://.import/s.png-614f5428f836789142d8dbf0672ef9ee.stex" ]
+source_file="res://Images/World/افريقيا/حواف/s.png"
+dest_files=[ "res://.import/s.png-f7ad67a3913feaa750556d4762750b76.stex" ]
 
 [params]
 

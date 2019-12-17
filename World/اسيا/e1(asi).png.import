@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/e1(asi).png-1437a66335ba6d7f226df7e0c4447352.stex"
+path="res://.import/e1(asi).png-ac6e4b79f9752aa38bcac5d2af980f5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/اسيا/e1(asi).png"
-dest_files=[ "res://.import/e1(asi).png-1437a66335ba6d7f226df7e0c4447352.stex" ]
+source_file="res://Images/World/اسيا/e1(asi).png"
+dest_files=[ "res://.import/e1(asi).png-ac6e4b79f9752aa38bcac5d2af980f5e.stex" ]
 
 [params]
 

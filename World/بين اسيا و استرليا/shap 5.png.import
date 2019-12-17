@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shap 5.png-47ab519c6db24677127c469f42ad3e5d.stex"
+path="res://.import/shap 5.png-e73a16b8bc121d0f9ac96d8b6a81a367.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/بين اسيا و استرليا/shap 5.png"
-dest_files=[ "res://.import/shap 5.png-47ab519c6db24677127c469f42ad3e5d.stex" ]
+source_file="res://Images/World/بين اسيا و استرليا/shap 5.png"
+dest_files=[ "res://.import/shap 5.png-e73a16b8bc121d0f9ac96d8b6a81a367.stex" ]
 
 [params]
 

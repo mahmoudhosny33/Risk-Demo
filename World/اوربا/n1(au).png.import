@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/n1(au).png-da5d24b1da59c764bc36ac724af1f926.stex"
+path="res://.import/n1(au).png-900629e27b3e228108f0588c447c967f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/اوربا/n1(au).png"
-dest_files=[ "res://.import/n1(au).png-da5d24b1da59c764bc36ac724af1f926.stex" ]
+source_file="res://Images/World/اوربا/n1(au).png"
+dest_files=[ "res://.import/n1(au).png-900629e27b3e228108f0588c447c967f.stex" ]
 
 [params]
 

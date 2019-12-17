@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/n2.png-2a94adc4aff892cc3933bfe78afb3367.stex"
+path="res://.import/n2.png-1344d34c9c8d928c6a6af6a3d17e1b43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/افريقيا/n2.png"
-dest_files=[ "res://.import/n2.png-2a94adc4aff892cc3933bfe78afb3367.stex" ]
+source_file="res://Images/World/افريقيا/n2.png"
+dest_files=[ "res://.import/n2.png-1344d34c9c8d928c6a6af6a3d17e1b43.stex" ]
 
 [params]
 

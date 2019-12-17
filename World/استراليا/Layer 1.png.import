@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Layer 1.png-b10c43d81d5f4059857d2b4e2ce25692.stex"
+path="res://.import/Layer 1.png-3a16e4c455570c8157ddfc0a0b2805d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/استراليا/Layer 1.png"
-dest_files=[ "res://.import/Layer 1.png-b10c43d81d5f4059857d2b4e2ce25692.stex" ]
+source_file="res://Images/World/استراليا/Layer 1.png"
+dest_files=[ "res://.import/Layer 1.png-3a16e4c455570c8157ddfc0a0b2805d1.stex" ]
 
 [params]
 

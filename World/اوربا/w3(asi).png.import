@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/w3(asi).png-30f1ac51a89ca7998b5c8ad5ec6f8f1d.stex"
+path="res://.import/w3(asi).png-f1d3bd081b8d53b23306a89e11e12f8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/اوربا/w3(asi).png"
-dest_files=[ "res://.import/w3(asi).png-30f1ac51a89ca7998b5c8ad5ec6f8f1d.stex" ]
+source_file="res://Images/World/اوربا/w3(asi).png"
+dest_files=[ "res://.import/w3(asi).png-f1d3bd081b8d53b23306a89e11e12f8a.stex" ]
 
 [params]
 

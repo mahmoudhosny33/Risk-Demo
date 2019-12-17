@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/s2(au).png-951e82c94e6e3cc6bab58bd167dcc466.stex"
+path="res://.import/s2(au).png-12635f7db705faa77273ba6ed8dddba6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/اوربا/s2(au).png"
-dest_files=[ "res://.import/s2(au).png-951e82c94e6e3cc6bab58bd167dcc466.stex" ]
+source_file="res://Images/World/اوربا/s2(au).png"
+dest_files=[ "res://.import/s2(au).png-12635f7db705faa77273ba6ed8dddba6.stex" ]
 
 [params]
 

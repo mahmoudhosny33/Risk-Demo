@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/risk.png-786f9a4de52121ddd12a8f4863697c76.stex"
+path="res://.import/risk.png-741211c8296df7086a6de9fc42e0d89f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/risk.png"
-dest_files=[ "res://.import/risk.png-786f9a4de52121ddd12a8f4863697c76.stex" ]
+source_file="res://Images/World/risk.png"
+dest_files=[ "res://.import/risk.png-741211c8296df7086a6de9fc42e0d89f.stex" ]
 
 [params]
 
