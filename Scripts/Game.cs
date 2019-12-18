@@ -16,10 +16,25 @@ public class Game : Sprite
 
             value -= (1/60f);
         }
+
     }
-    public void zoom(Vector2 zoom_margin,string name)
+    public void zoom(Vector2 pos,string name)
     {
+       
         AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
+        Animation animation = ZCamera.GetAnimation("Zoom");
+        Vector2 camera_pos = (GetNode("ZCamera/Camera2D") as Camera2D).Position;
+        float distance = pos.DistanceTo(camera_pos);
+        Vector2 speed = new Vector2(distance/22, distance/22);
+        Vector2 dir = pos.DirectionTo(camera_pos);
+
+        Vector2 newPos = camera_pos;
+        GD.Print(newPos);
+        for(int i = 0; i < 22; i++)
+        {
+            animation.TrackSetKeyValue(1, i,newPos);
+            newPos -= (dir * speed);
+        }
         ZCamera.Play("Zoom");
     }
     public Animation AddAnimation(string name)
@@ -229,7 +244,7 @@ public class Game : Sprite
             Rest(); // Disable Last Action
             try
             {
-                zoom(GetLocalMousePosition(),name);
+                zoom(GetGlobalMousePosition(),name);
                 ActivationMode(name);
             }
             catch
