@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 using System.Collections.Generic;
 using Godot.Collections;
 
@@ -25,7 +25,7 @@ namespace RiskGame.Scripts
                 }
                 catch
                 {
-                    GD.Print("NOt Found");
+                    GD.Print("Null Reference Error");
                 }
 
             }
@@ -55,32 +55,41 @@ namespace RiskGame.Scripts
                 int index = 0;
                 foreach (int neighbor in map[name])
                 {
-                    animation.AddTrack(Animation.TrackType.Value);
-                    animation.TrackSetPath(index, $"{(neighbor)}:modulate");
+					try{
+                    if (countries[neighbor].owner.id != countries[name].owner.id)
+                    {
+                        animation.AddTrack(Animation.TrackType.Value);
+                        animation.TrackSetPath(index, $"{(neighbor)}:modulate");
 
-                    animation.SetLength(2.4f);
-                    animation.SetStep(0.6f);
-                    animation.SetLoop(true);
-                    animation.TrackInsertKey(index, 0, new Color());
-                    //animation.TrackSetKeyValue(index, 0,countries[neighbor].owner.color);// Owner Color Not Found
+                        animation.SetLength(2.4f);
+                        animation.SetStep(0.6f);
+                        animation.SetLoop(true);
+                        animation.TrackInsertKey(index, 0, new Color());
+                        animation.TrackSetKeyValue(index, 0,countries[neighbor].owner.color);// Owner Color Not Found
 
-                    animation.TrackInsertKey(index, 0.6f, new Color());
-                    animation.TrackSetKeyValue(index, 1, Colors.Black);
+                        animation.TrackInsertKey(index, 0.6f, new Color());
+                        animation.TrackSetKeyValue(index, 1, Colors.Black);
 
-                    animation.TrackInsertKey(index, 1.2f, new Color());
-                    //  animation.TrackSetKeyValue(index, 2, countries[neighbor].owner.color);
+                        animation.TrackInsertKey(index, 1.2f, new Color());
+                        animation.TrackSetKeyValue(index, 2, countries[neighbor].owner.color);
 
 
-                    animation.TrackInsertKey(index, 1.8f, new Color());
-                    animation.TrackSetKeyValue(index, 3, Colors.Black);
+                        animation.TrackInsertKey(index, 1.8f, new Color());
+                        animation.TrackSetKeyValue(index, 3, Colors.Black);
 
-                    animation.TrackInsertKey(index, 2.4f, new Color());
-                    // animation.TrackSetKeyValue(index, 4, countries[neighbor].owner.color);
+                        animation.TrackInsertKey(index, 2.4f, new Color());
+                        animation.TrackSetKeyValue(index, 4, countries[neighbor].owner.color);
+                        index++;
+                    }
 
-                    index++;
                 }
-                return animation;
+                catch(System.Exception e)
+                {
+                    GD.Print("Null Reference Error Please Check Ready Function Note");
+                }
             }
+            return animation;
+        }
             public void __Init__AttackAnimation()
             {
                 AnimationPlayer AttackPlayer = GetNode("Attack") as AnimationPlayer;
@@ -90,6 +99,7 @@ namespace RiskGame.Scripts
                 for (int name = 0; name < 42; name++)
                 {
                     AttackPlayer.AddAnimation(name.ToString(), AddAnimation(name));
+               
                 }
             }
         public void AttackAnimation(string name)
@@ -158,13 +168,19 @@ namespace RiskGame.Scripts
             }
             catch { GD.Print("Country not found, please add it first"); }
         }
+
         public void Rest()
         {
             for (int i = 0; i < 42; i++)
             {
 
                 ToDark(i.ToString());
+                
             }
+            AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
+            AnimationPlayer AttackPlayer = GetNode("Attack") as AnimationPlayer;
+            AttackPlayer.Stop();
+            ZCamera.Stop();
         }
 
     }

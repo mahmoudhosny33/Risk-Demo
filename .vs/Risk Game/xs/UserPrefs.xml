@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Country.cs">
     <Files>
-      <File FileName="Scripts/Game.cs" Line="382" Column="40" />
-      <File FileName="Scripts/Country.cs" Line="53" Column="28" />
-      <File FileName="Scripts/Player.cs" Line="14" Column="43" />
-      <File FileName="Scripts/AnimationsMaker.cs" Line="98" Column="34" />
+      <File FileName="Scripts/AnimationsMaker.cs" Line="88" Column="23" />
+      <File FileName="Scripts/Game.cs" Line="15" Column="21" />
+      <File FileName="Scripts/Country.cs" Line="16" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +11,7 @@
           <Node name="Risk Game" expanded="True">
             <Node name="Risk Game" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Player.cs" selected="True" />
+                <Node name="Country.cs" selected="True" />
               </Node>
             </Node>
           </Node>
