@@ -1,4 +1,6 @@
 using System;
+using Godot.Collections;
+using Godot;
 namespace RiskGame.Scripts
 {
     public partial class Game
@@ -25,7 +27,7 @@ namespace RiskGame.Scripts
             {
                 int x = -1;
                 bool res = false;
-                System.Console.WriteLine("enter number of troops to fight from 1 to {0}", this.troops - 1);
+                GD.Print($"enter number of troops to fight from 1 to {this.troops - 1}");
                 ////////////should take the input from gui
                 x = 1;
 
@@ -35,7 +37,7 @@ namespace RiskGame.Scripts
                     int Attacker_Dice, Attacked_Dice;
                     Attacker_Dice = rand.Next(1, 6);
                     Attacked_Dice = rand.Next(1, 6);
-                    System.Console.WriteLine("a: {0} , b {1} ", Attacker_Dice, Attacked_Dice);
+                    GD.Print($"Attacked Dice: {Attacker_Dice} , Attacked Dice {Attacked_Dice} ");
                     if (Attacker_Dice > Attacked_Dice)
                     {
                         enemy.troops--;
@@ -45,10 +47,10 @@ namespace RiskGame.Scripts
                 if (enemy.troops == 0)
                 {
 
-                    System.Console.WriteLine("player {0} has take country from player {1}", this.owner.id, enemy.owner.id);
+                    GD.Print($"player {this.owner.id} has take country from player {enemy.owner.id}");
                     int f;
 
-                    System.Console.WriteLine("how many toops you want to transport");
+                   GD.Print("how many toops you want to transport");
                     ////////////should take input from gui
                     f = 1;
 

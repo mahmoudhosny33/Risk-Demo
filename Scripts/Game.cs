@@ -18,7 +18,6 @@ namespace RiskGame.Scripts
         private int mode = 0;
         public override void _Ready()
         {
-
             turn = 0;
             curplayer = new Player();
             FillMap();
@@ -150,7 +149,7 @@ namespace RiskGame.Scripts
             }
             players[0].color = Colors.DarkGreen;
             players[1].color = Colors.DarkRed;
-            players[2].color = Colors.DarkBlue;
+            players[2].color = Colors.DarkViolet;
         }
         private void InitCountries()
         {
@@ -214,69 +213,7 @@ namespace RiskGame.Scripts
                 }
             }
         }
-        public void ToLight(string name)
-        {
-            if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkRed)
-            {
-                players[countries[int.Parse(name)].owner.id].color = Colors.Red;
 
-            }
-            else if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkGreen)
-            {
-                players[countries[int.Parse(name)].owner.id].color = Colors.Green;
-
-
-            }
-            else if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkBlue)
-            {
-
-                players[countries[int.Parse(name)].owner.id].color = Colors.Blue;
-
-            }
-            Brush(name);
-        }
-        public void ToDark(string name)
-        {
-
-            if (players[countries[int.Parse(name)].owner.id].color == Colors.Red)
-            {
-                players[countries[int.Parse(name)].owner.id].color = Colors.DarkRed;
-
-
-            }
-            else if (players[countries[int.Parse(name)].owner.id].color == Colors.Green)
-            {
-                players[countries[int.Parse(name)].owner.id].color = Colors.DarkGreen;
-
-
-            }
-            else if (countries[int.Parse(name)].owner.color == Colors.Blue)
-            {
-                players[countries[int.Parse(name)].owner.id].color = Colors.DarkBlue;
-
-
-            }
-            Brush(name);
-        }
-        public void Brush(string name)
-        {
-            Sprite mySprite = (GetNode((name)) as Sprite);
-            try
-            {
-                mySprite.Modulate = players[countries[int.Parse(name)].owner.id].color;
-                mySprite.Update();
-                //GD.Print("7a7a");
-            }
-            catch { GD.Print("Country not found, please add it first"); }
-        }
-        public void Rest()
-        {
-            for (int i = 0; i < 42; i++)
-            {
-
-                Brush(i.ToString());
-            }
-        }
         public void AddCountry(int id, string name)
         {
             countries[int.Parse(name)].owner = players[id];
@@ -289,8 +226,8 @@ namespace RiskGame.Scripts
 
         private void Draft(int a)
         {
-            System.Console.WriteLine(" ");
-            System.Console.WriteLine("enter  num of troops ");
+            ChangeMode("Draft");
+            GD.Print("enter  num of troops ");
             //////////should take the number from gui
             int b = 1;
             string c;
@@ -307,8 +244,10 @@ namespace RiskGame.Scripts
         }
         private void Attack(int Attacker, int Attacked)
         {
-            System.Console.WriteLine("Attack");
-            System.Console.WriteLine(" ");
+           
+
+            GD.Print("Attack");
+
             int curcity;
 
             if (countries[Attacked].owner != curplayer)
@@ -347,11 +286,11 @@ namespace RiskGame.Scripts
         }
         private void Fortify(int a, int b)
         {
-
+            ChangeMode("Fortify");
 
             /////////should read the input from gui
 
-            System.Console.WriteLine("enter num of troops from 1 to {0}", countries[a].troops - 1);
+            GD.Print($"enter num of troops from 1 to {countries[a].troops - 1}");
             /////////should read the input from gui
             int c = 1;
             if (countries[a].troops - c >= 1)
@@ -383,9 +322,9 @@ namespace RiskGame.Scripts
         private void StartTurn()
         {
             ViewAllCities(1);
-            System.Console.WriteLine("draft");
+            GD.Print("Draft");
             int newtroops = (players[turn % 3].countries) / 3;
-            System.Console.WriteLine("player{0},has new{1}troops", turn % 3, newtroops);
+            GD.Print($"Player{turn % 3},has new{newtroops}troops");
             players[turn % 3].notusedTroops += newtroops;
 
 
@@ -418,11 +357,14 @@ namespace RiskGame.Scripts
         }
         private void _on_Area2D_input_event(object viewport, object @event, int shape_idx, string name)
         {
-
+            if (Input.IsActionJustPressed("LM"))
+            {
+                Rest();
+            }
             if (Input.IsActionPressed("LM") && this.mode == 0 && countries[int.Parse(name)].owner == players[turn])
             {
                 Draft(int.Parse(name));
-                System.Console.WriteLine("still {0}", players[turn].notusedTroops);
+                GD.Print($"still {players[turn].notusedTroops}");
             }
             else if (Input.IsActionPressed("LM") && this.mode == 1)
             {
@@ -436,10 +378,11 @@ namespace RiskGame.Scripts
                         {
                             if (countries[map[int.Parse(name)][i]].owner != players[turn])
                             {
+                                ChangeMode("Attack");
                                 // ToLight(map[int.Parse(name)][i].ToString());
-                                AnimationPlayer animation = GetNode("Attack") as AnimationPlayer;
-                                Zoom(GetGlobalMousePosition(), name);
-                                animation.Play(name);
+
+                                //  Zoom(GetGlobalMousePosition(), name);
+                                AttackAnimation(name);
                             }
                         }
                     }

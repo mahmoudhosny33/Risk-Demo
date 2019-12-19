@@ -19,7 +19,7 @@ namespace RiskGame.Scripts
                     for (int i = 0; i < 22; i++)
                     {
                         animation.TrackSetKeyValue(idx, i, new Vector2(value, value));
-                        GD.Print(animation.TrackGetKeyValue(idx, i));
+                       // GD.Print(animation.TrackGetKeyValue(idx, i));
                         value -= (1 / 60f);
                     }
                 }
@@ -92,7 +92,81 @@ namespace RiskGame.Scripts
                     AttackPlayer.AddAnimation(name.ToString(), AddAnimation(name));
                 }
             }
-
+        public void AttackAnimation(string name)
+        {
+            AnimationPlayer animation = GetNode("Attack") as AnimationPlayer;
+            animation.Play(name);
         }
+        public void ChangeMode(string Mode)
+        {
+            RichTextLabel modeTextLabel = GetNode("OnReady/Mode") as RichTextLabel;
+            modeTextLabel.Text = Mode;
+        }
+        /////////////////////////////// Colors ////////////////////////////////////////
+        public void ToLight(string name)
+        {
+            if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkRed)
+            {
+                players[countries[int.Parse(name)].owner.id].color = Colors.Red;
+
+            }
+            else if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkGreen)
+            {
+                players[countries[int.Parse(name)].owner.id].color = Colors.Green;
+
+
+            }
+            else if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkViolet)
+            {
+
+                players[countries[int.Parse(name)].owner.id].color = Colors.Violet;
+
+            }
+            Brush(name);
+        }
+        public void ToDark(string name)
+        {
+
+            if (players[countries[int.Parse(name)].owner.id].color == Colors.Red)
+            {
+                players[countries[int.Parse(name)].owner.id].color = Colors.DarkRed;
+
+
+            }
+            else if (players[countries[int.Parse(name)].owner.id].color == Colors.Green)
+            {
+                players[countries[int.Parse(name)].owner.id].color = Colors.DarkGreen;
+
+
+            }
+            else if (countries[int.Parse(name)].owner.color == Colors.Violet)
+            {
+                players[countries[int.Parse(name)].owner.id].color = Colors.DarkViolet;
+
+
+            }
+            Brush(name);
+        }
+        public void Brush(string name)
+        {
+            Sprite mySprite = (GetNode((name)) as Sprite);
+            try
+            {
+                mySprite.Modulate = players[countries[int.Parse(name)].owner.id].color;
+                mySprite.Update();
+                //GD.Print("7a7a");
+            }
+            catch { GD.Print("Country not found, please add it first"); }
+        }
+        public void Rest()
+        {
+            for (int i = 0; i < 42; i++)
+            {
+
+                ToDark(i.ToString());
+            }
+        }
+
+    }
 
 }
