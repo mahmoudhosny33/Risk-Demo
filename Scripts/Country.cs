@@ -20,12 +20,14 @@ namespace RiskGame.Scripts
             public Country()
             {
                 DynamicFont font = new DynamicFont();
-                font.FontData = ResourceLoader.Load("res://Fonts/good times rg.ttf") as DynamicFontData;
+                DynamicFontData data = new DynamicFontData();
+                data.SetFontPath("res://Fonts/good times rg.ttf");
+                font.SetFontData(data);
                 font.Size = 20;
                 font.UseFilter = true;
 
                 numberOfTroopsTxt.RectSize = new Vector2(30, 30);
-                numberOfTroopsTxt.AddFontOverride("font",font);
+                numberOfTroopsTxt.AddFontOverride("normal_font",font);
                 numberOfTroopsTxt.PushAlign(RichTextLabel.Align.Center);
 
                 numberOfTroopsTxt.Text = (troops.ToString()); 

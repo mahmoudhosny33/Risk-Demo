@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Risk Game", "Risk Game.csproj", "{F94AADA3-B17A-4178-B3E2-F9BFE721E881}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Risk Game", "Risk Game.csproj", "{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	Tools|Any CPU = Tools|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
-		{F94AADA3-B17A-4178-B3E2-F9BFE721E881}.Tools|Any CPU.Build.0 = Tools|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}.Tools|Any CPU.Build.0 = Tools|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -49,7 +49,7 @@ namespace RiskGame.Scripts
                 countries[index].numberOfTroops.RectPosition = (GetNode(index.ToString()) as Sprite).GetPosition() - new Vector2(25,25);
                 countries[index].numberOfTroops.Modulate = countries[index].owner.color.Lightened(0.3f);
 
-                countries[index].numberOfTroopsTxt.RectPosition = (GetNode(index.ToString()) as Sprite).GetPosition() - new Vector2(25, 25);
+                countries[index].numberOfTroopsTxt.RectPosition = (GetNode(index.ToString()) as Sprite).GetPosition() - new Vector2(15, 15);
                 Scene.AddChild(countries[index].numberOfTroops);
 
                 Scene.AddChild(countries[index].numberOfTroopsTxt);
@@ -58,7 +58,7 @@ namespace RiskGame.Scripts
             countries[38].numberOfTroopsTxt.RectPosition += new Vector2(45, 0);
 
             countries[27].numberOfTroops.RectPosition += new Vector2(-15, 0);
-            countries[27].numberOfTroopsTxt.RectPosition += new Vector2(45, 0);
+            //countries[27].numberOfTroopsTxt.RectPosition += new Vector2(45, 0);
         }
 
         private void CheckMap()

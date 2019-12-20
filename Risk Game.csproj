@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F94AADA3-B17A-4178-B3E2-F9BFE721E881}</ProjectGuid>
+    <ProjectGuid>{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
     <RootNamespace>RiskGame</RootNamespace>
