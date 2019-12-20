@@ -243,6 +243,7 @@ namespace RiskGame.Scripts
             GD.Print("Draft");
             int newtroops = (players[turn % 3].countries) / 3;
             GD.Print($"Player{turn % 3},has new{newtroops}troops");
+            PlayerTurn($"Player {turn % 3}");
             players[turn % 3].notusedTroops += newtroops;
             Rest();
 

@@ -133,6 +133,12 @@ namespace RiskGame.Scripts
 
         }
 
+        public void PlayerTurn(string Player)
+        {
+            RichTextLabel PlayerLabel = GetNode("OnReady/PlayerId") as RichTextLabel;
+            PlayerLabel.Text = Player;
+        }
+
         /////////////////////////////// Colors ////////////////////////////////////////
         public void ToLight(string name)
         {
