@@ -32,6 +32,9 @@ namespace RiskGame.Scripts
             Disturb();
             __Init__AttackAnimation();
             __initZoom();
+
+            GameSound(true);
+
             StartTurn();
 
         }
@@ -169,7 +172,7 @@ namespace RiskGame.Scripts
             int curcity;
 
             if (countries[Attacked].owner != curplayer)
-                if (countries[Attacker].Attack(countries[Attacked]))
+                if (Attack(ref countries[Attacked],ref countries[Attacker]))
                 {
                     Brush(Attacked.ToString());
                 }
@@ -314,10 +317,10 @@ namespace RiskGame.Scripts
                         {
                             if (countries[map[int.Parse(name)][i]].owner != players[turn])
                             {
-                               
-                                // ToLight(map[int.Parse(name)][i].ToString());
 
-                                //  Zoom(GetGlobalMousePosition(), name);
+                                // ToLight(map[int.Parse(name)][i].ToString());
+                                GameSound(false);
+                               // Zoom(GetGlobalMousePosition(), name);
                                 AttackAnimation(name);
                             }
                         }
@@ -325,6 +328,7 @@ namespace RiskGame.Scripts
                 }
                 else
                 {
+                    Rest();
 
                     bool allow = false;
                     int n = int.Parse(name);
@@ -346,7 +350,7 @@ namespace RiskGame.Scripts
                         if (allow)
                         {
 
-                            countries[selected].Attack(countries[n]);
+                            Attack(ref countries[n],ref countries[selected]);
                            
                         }
 
@@ -354,6 +358,7 @@ namespace RiskGame.Scripts
                     }
 
                 }
+
                
             }
           
@@ -388,6 +393,15 @@ namespace RiskGame.Scripts
 
         }
 
+
+        private void _on_DicePlayer_animation_finished(string anim_name)
+        {
+            AnimationPlayer player = GetNode("DicePlayer") as AnimationPlayer;
+            player.Stop();
+            ShowDiceValue(Attacker_Dice, Attacked_Dice);
+        }
+
     }
 
 }
+

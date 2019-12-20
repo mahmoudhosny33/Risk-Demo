@@ -5,8 +5,11 @@ namespace RiskGame.Scripts
 {
     public partial class Game
     {
+        public int Attacker_Dice, Attacked_Dice;
+
         public class Country
         {
+
             public int Active { get; set; } //Should be int 0 or 1 or 2
 
             public Player owner = new Player();
@@ -16,38 +19,46 @@ namespace RiskGame.Scripts
                 owner = null;
                 troops = 0;
             }
-
-            public void LoseCountry(Player newone, int sol)
+        }
+            public void LoseCountry(Player newone,ref Country enemy, int sol)
             {
-                this.owner = newone;
-                this.troops = sol;
+
+                enemy.owner = newone;
+                enemy.troops = sol;
+            __Init__AttackAnimation();
 
             }
-            public bool Attack(Country enemy)
+            public bool Attack(ref Country enemy,ref Country country)
             {
                 int x = -1;
                 bool res = false;
-                GD.Print($"enter number of troops to fight from 1 to {this.troops - 1}");
+                GD.Print($"enter number of troops to fight from 1 to {country.troops - 1}");
                 ////////////should take the input from gui
                 x = 1;
 
                 System.Random rand = new System.Random();
-                for (int i = 0; i < x && enemy.troops > 0 && this.troops >= 2; i++)
+                for (int i = 0; i < x && enemy.troops > 0 && country.troops >= 2; i++)
                 {
-                    int Attacker_Dice, Attacked_Dice;
-                    Attacker_Dice = rand.Next(1, 6);
-                    Attacked_Dice = rand.Next(1, 6);
-                    GD.Print($"Attacked Dice: {Attacker_Dice} , Attacked Dice {Attacked_Dice} ");
+               
+                    Attacker_Dice = rand.Next(1, 7);
+                    Attacked_Dice = rand.Next(1, 7);
+
+                RollDice();
+
+                GD.Print($"Attacker Dice: {Attacker_Dice} , Attacked Dice {Attacked_Dice} ");
                     if (Attacker_Dice > Attacked_Dice)
                     {
                         enemy.troops--;
                     }
-                    else this.troops--;
+                    else country.troops--;
                 }
-                if (enemy.troops == 0)
+
+
+            
+            if (enemy.troops == 0)
                 {
 
-                    GD.Print($"player {this.owner.id} has take country from player {enemy.owner.id}");
+                    GD.Print($"player {country.owner.id} has take country from player {enemy.owner.id}");
                     int f;
 
                    GD.Print("how many toops you want to transport");
@@ -55,14 +66,15 @@ namespace RiskGame.Scripts
                     f = 1;
 
                     enemy.owner.countries--;
-                    enemy.LoseCountry(this.owner, f);
+                    LoseCountry(country.owner,ref enemy, f);
                     res = true;
-                    this.troops -= f;
-                    this.owner.countries++;
+                    country.troops -= f;
+                    country.owner.countries++;
                 }
+
                 return res;
             }
 
         }
-    }
+
 }

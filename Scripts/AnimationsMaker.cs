@@ -6,6 +6,7 @@ namespace RiskGame.Scripts
 {
     public partial class Game
     {
+
             public void __initZoom()
             {
 
@@ -29,27 +30,29 @@ namespace RiskGame.Scripts
                 }
 
             }
-            public void Zoom(Vector2 pos, string name)
+        public void Zoom(Vector2 pos, string name)
+        {
+
+            AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
+            Animation animation = ZCamera.GetAnimation("Zoom");
+            Vector2 camera_pos = (GetNode("ZCamera/Camera2D") as Camera2D).Position;
+            GD.Print(camera_pos);
+            float distance = pos.DistanceTo(camera_pos);
+            Vector2 speed = new Vector2(distance / 22, distance / 22);
+            Vector2 dir = pos.DirectionTo(camera_pos);
+
+            Vector2 newPos = camera_pos;
+
+            for (int i = 0; i < 22; i++)
             {
-
-                AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
-                Animation animation = ZCamera.GetAnimation("Zoom");
-                Vector2 camera_pos = (GetNode("ZCamera/Camera2D") as Camera2D).Position;
-                float distance = pos.DistanceTo(camera_pos);
-                Vector2 speed = new Vector2(distance / 22, distance / 22);
-                Vector2 dir = pos.DirectionTo(camera_pos);
-
-                Vector2 newPos = camera_pos;
-
-                for (int i = 0; i < 22; i++)
-                {
-                    animation.TrackSetKeyValue(1, i, newPos);
-                    newPos -= (dir * speed);
-                }
-                ZCamera.Play("Zoom");
+                animation.TrackSetKeyValue(1, i, newPos);
+                newPos -= (dir * speed);
             }
+            ZCamera.Play("Zoom");
 
-            public Animation AddAnimation(int name)
+        }
+
+        public Animation AddAnimation(int name)
             {
                 Animation animation = new Animation();
                 int index = 0;
@@ -139,6 +142,23 @@ namespace RiskGame.Scripts
             PlayerLabel.Text = Player;
         }
 
+        public void RollDice()
+        {
+            AnimationPlayer player = GetNode("DicePlayer") as AnimationPlayer;
+
+
+            player.Play("Dice");
+        }
+
+        public void ShowDiceValue(int For1, int For2)
+        {
+            Sprite sprite1 = GetNode("DicePlayer/Dice") as Sprite;
+            Sprite sprite2 = GetNode("DicePlayer/Dice2") as Sprite;
+
+
+            sprite1.SetFrame(For1 - 1);
+            sprite2.SetFrame(For2 - 1);
+        }
         ////////////////////////////////Sound/////////////////////////////////////////
         public void ClikedSound()
         {
@@ -146,7 +166,26 @@ namespace RiskGame.Scripts
 
             sound.Play("Click");
         }
+        public void GameSound(bool play)
+        {
+            AnimationPlayer sound = GetNode("OnReady") as AnimationPlayer;
 
+            AudioStreamPlayer audio = GetNode("OnReady/Game") as AudioStreamPlayer;
+
+
+            AudioStream Stream1 = ResourceLoader.Load("res://Sound/Heartbeat Suspense/hbs.wav") as AudioStream;
+            AudioStream Stream2 = ResourceLoader.Load("res://Sound/Battle-Field-Sound.wav") as AudioStream;
+            if (play)
+            {
+                audio.SetStream(Stream2);
+            }
+            else
+            {
+                audio.SetStream(Stream1);
+            }
+
+            sound.Play("Battle-Field");
+        }
 
 
         /////////////////////////////// Colors ////////////////////////////////////////
@@ -215,8 +254,6 @@ namespace RiskGame.Scripts
                 
             }
             AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
-            AnimationPlayer AttackPlayer = GetNode("Attack") as AnimationPlayer;
-            AttackPlayer.Stop();
             ZCamera.Stop();
         }
 

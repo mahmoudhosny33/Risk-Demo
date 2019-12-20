@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Images/World/risk.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Game.cs" type="Script" id=2]
@@ -49,14 +49,15 @@
 [ext_resource path="res://Images/World/بين اسيا و استرليا/shap 5.png" type="Texture" id=47]
 [ext_resource path="res://Images/World/استراليا/Layer 1.png" type="Texture" id=48]
 [ext_resource path="res://Images/World/استراليا/Layer 1 (2).png" type="Texture" id=49]
-[ext_resource path="res://Sound/Heartbeat Suspense/hbs.wav" type="AudioStream" id=50]
-[ext_resource path="res://Fonts/ModeFont/Wilkey.ttf" type="DynamicFontData" id=51]
-[ext_resource path="res://Images/GameUI/Layer.png" type="Texture" id=52]
-[ext_resource path="res://Images/GameUI/Layer2.png" type="Texture" id=53]
+[ext_resource path="res://Fonts/ModeFont/Wilkey.ttf" type="DynamicFontData" id=50]
+[ext_resource path="res://Images/GameUI/Layer.png" type="Texture" id=51]
+[ext_resource path="res://Images/GameUI/Layer2.png" type="Texture" id=52]
+[ext_resource path="res://Fonts/PG_Roof Runners_bold.ttf" type="DynamicFontData" id=53]
 [ext_resource path="res://Sound/Battle-Field-Sound.wav" type="AudioStream" id=54]
 [ext_resource path="res://Sound/click_sound.wav" type="AudioStream" id=55]
-[ext_resource path="res://Images/GameUI/ModeButton.png" type="Texture" id=56]
-[ext_resource path="res://Images/GameUI/Pressed_ModeButton.png" type="Texture" id=57]
+[ext_resource path="res://Images/GameUI/Dice.png" type="Texture" id=56]
+[ext_resource path="res://Images/GameUI/ModeButton.png" type="Texture" id=57]
+[ext_resource path="res://Images/GameUI/Pressed_ModeButton.png" type="Texture" id=58]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -169,21 +170,10 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("ZCamera/AudioStreamPlayer2D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=14]
 resource_name = "Battle-Field"
+length = 80.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("OnReady/Game:playing")
 tracks/0/interp = 1
@@ -191,13 +181,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [  ]
+"values": [ true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 resource_name = "Click"
 tracks/0/type = "value"
 tracks/0/path = NodePath("OnReady/Click:playing")
@@ -212,11 +202,11 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=16]
 content_margin_left = 64.0
 bg_color = Color( 0.0588235, 0.211765, 0.309804, 1 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=17]
 size = 28
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -224,7 +214,52 @@ use_filter = true
 extra_spacing_top = 1
 extra_spacing_char = 3
 extra_spacing_space = 1
-font_data = ExtResource( 51 )
+font_data = ExtResource( 50 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 165.0
+bg_color = Color( 0.882353, 0.258824, 0.258824, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.701961, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=19]
+size = 30
+outline_size = 1
+outline_color = Color( 0.580392, 0.521569, 0.521569, 1 )
+use_filter = true
+font_data = ExtResource( 53 )
+
+[sub_resource type="Animation" id=20]
+resource_name = "Dice"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("DicePlayer/Dice:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DicePlayer/Dice2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5 ]
+}
 
 [node name="Battle-Field" type="Node2D"]
 __meta__ = {
@@ -996,6 +1031,7 @@ visible = false
 polygon = PoolVector2Array( -30.2, -111.6, -31.3, -109.5, -32.4, -109.5, -39.5, -98.8, -39.5, -94.9, -38.8, -91.5, -37.8, -91.5, -23.5, -93.9, -23.5, -91.1, -16.5, -81.5, -11, -81.5, -12.9, -91.5, -10.5, -91.5, -2.5, -101.5, 1, -101.5, 8.6, -97.3, 15.2, -102.9, 17.5, -101.8, 17.5, -100.6, 23.5, -96.6, 23.5, -92.8, 30.5, -75.9, 30.5, -70.4, 29.7, -63.5, 30.9, -63.5, 51.5, -53.8, 51.5, -44.9, 52.2, -41.5, 62.5, -33.5, 62.5, -31.1, 79.5, -7.1, 79.5, 41.5, 75.7, 44.6, 79.5, 55, 79.5, 57.5, 77.5, 57.5, 71.5, 66, 71.5, 74.7, 65.2, 108.5, 52.8, 108.5, 48.5, 109.2, 48.5, 110.1, 42.5, 118.5, 27, 118.5, 22.6, 116.3, 13.9, 118.5, 11.5, 118.5, 11.5, 105.5, 9.6, 81.4, 4.5, 77.5, 4.5, 66.5, -3.3, -3.5, -71.5, -6.5, -71.5, -8.7, -74.5, -11.7, -74.5, -21.5, -79.5, -58.6, -79.5, -109.5, -69.3, -118.5, -63.9, -118.5, -34.5, -118.5 )
 
 [node name="ZCamera" type="AnimationPlayer" parent="Game"]
+editor/display_folded = true
 anims/Zoom = SubResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/ZCamera"]
@@ -1008,22 +1044,23 @@ drag_margin_top = 0.4
 drag_margin_right = 0.4
 drag_margin_bottom = 0.6
 editor_draw_drag_margin = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Game/ZCamera"]
-stream = ExtResource( 50 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OnReady" type="AnimationPlayer" parent="Game"]
+editor/display_folded = true
 autoplay = "Battle-Field"
 anims/Battle-Field = SubResource( 14 )
-anims/Click = SubResource( 17 )
+anims/Click = SubResource( 15 )
 
 [node name="Mode" type="RichTextLabel" parent="Game/OnReady"]
 margin_left = 847.0
 margin_top = 989.0
 margin_right = 1087.0
 margin_bottom = 1026.0
-custom_styles/normal = SubResource( 15 )
-custom_fonts/normal_font = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/normal_font = SubResource( 17 )
 text = "Draft"
 __meta__ = {
 "_edit_lock_": true
@@ -1034,37 +1071,81 @@ margin_left = 821.736
 margin_top = 969.856
 margin_right = 916.736
 margin_bottom = 986.856
-texture = ExtResource( 52 )
+texture = ExtResource( 51 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AttackMarker" type="TextureRect" parent="Game/OnReady"]
 margin_left = 913.019
 margin_top = 969.623
 margin_right = 1009.55
 margin_bottom = 986.623
-texture = ExtResource( 53 )
+texture = ExtResource( 52 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="FortifyMarker" type="TextureRect" parent="Game/OnReady"]
 margin_left = 1002.56
 margin_top = 970.442
 margin_right = 1097.56
 margin_bottom = 1010.44
-texture = ExtResource( 53 )
+texture = ExtResource( 52 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerName" type="RichTextLabel" parent="Game/OnReady"]
+margin_left = 665.0
+margin_top = 1029.0
+margin_right = 1254.11
+margin_bottom = 1079.0
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 19 )
+text = "Mohamed Zayan"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerId" type="RichTextLabel" parent="Game/OnReady"]
 margin_left = 829.0
 margin_top = 936.0
 margin_right = 1075.0
 margin_bottom = 968.0
-custom_styles/normal = SubResource( 15 )
-custom_fonts/normal_font = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/normal_font = SubResource( 17 )
 text = "Player 0"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Game" type="AudioStreamPlayer" parent="Game/OnReady"]
 stream = ExtResource( 54 )
-autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="Game/OnReady"]
 stream = ExtResource( 55 )
+
+[node name="DicePlayer" type="AnimationPlayer" parent="Game"]
+anims/Dice = SubResource( 20 )
+
+[node name="Dice" type="Sprite" parent="Game/DicePlayer"]
+position = Vector2( 147.061, 562.54 )
+texture = ExtResource( 56 )
+vframes = 2
+hframes = 3
+region_enabled = true
+region_rect = Rect2( 10, 6, 266, 179 )
+region_filter_clip = true
+
+[node name="Dice2" type="Sprite" parent="Game/DicePlayer"]
+position = Vector2( 1703.44, 549.586 )
+texture = ExtResource( 56 )
+vframes = 2
+hframes = 3
+region_enabled = true
+region_rect = Rect2( 10, 6, 266, 179 )
+region_filter_clip = true
 
 [node name="Button" type="TextureButton" parent="."]
 margin_left = 1095.55
@@ -1072,8 +1153,11 @@ margin_top = 873.187
 margin_right = 1261.55
 margin_bottom = 1044.19
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 56 )
-texture_pressed = ExtResource( 57 )
+texture_normal = ExtResource( 57 )
+texture_pressed = ExtResource( 58 )
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="input_event" from="Game/0/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "0" ]]
 [connection signal="input_event" from="Game/0/404044040/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "0" ]]
 [connection signal="input_event" from="Game/1/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "1" ]]
@@ -1121,4 +1205,5 @@ texture_pressed = ExtResource( 57 )
 [connection signal="input_event" from="Game/39/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "39" ]]
 [connection signal="input_event" from="Game/40/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "40" ]]
 [connection signal="input_event" from="Game/41/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "41" ]]
+[connection signal="animation_finished" from="Game/DicePlayer" to="Game" method="_on_DicePlayer_animation_finished"]
 [connection signal="pressed" from="Button" to="Game" method="_on_Button_pressed"]
