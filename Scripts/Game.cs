@@ -251,7 +251,8 @@ namespace RiskGame.Scripts
         }
         private void _on_Button_pressed()
         {
-            
+
+            ClikedSound();
 
             if (this.mode == 0 && players[this.turn].notusedTroops == 0)
             {
@@ -294,14 +295,15 @@ namespace RiskGame.Scripts
 
             if (Input.IsActionPressed("LM") && this.mode == 0 && countries[int.Parse(name)].owner == players[turn])
             {
-
+                ClikedSound();
 
                 Draft(int.Parse(name));
                 GD.Print($"still {players[turn].notusedTroops}");
             }
             else if (Input.IsActionPressed("LM") && this.mode == 1)
             {
-            
+                ClikedSound();
+
                 if (selected == -1)
                 {
                     if (countries[int.Parse(name)].owner == players[turn])
@@ -358,7 +360,7 @@ namespace RiskGame.Scripts
 
             else if (Input.IsActionPressed("LM") && this.mode == 2)
             {
-
+                ClikedSound();
                 int n = int.Parse(name);
                 if (selected == -1)
                 {

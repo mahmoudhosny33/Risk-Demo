@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Images/World/risk.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Game.cs" type="Script" id=2]
@@ -53,8 +53,10 @@
 [ext_resource path="res://Fonts/ModeFont/Wilkey.ttf" type="DynamicFontData" id=51]
 [ext_resource path="res://Images/GameUI/Layer.png" type="Texture" id=52]
 [ext_resource path="res://Images/GameUI/Layer2.png" type="Texture" id=53]
-[ext_resource path="res://Images/GameUI/ModeButton.png" type="Texture" id=54]
-[ext_resource path="res://Images/GameUI/Pressed_ModeButton.png" type="Texture" id=55]
+[ext_resource path="res://Sound/Battle-Field-Sound.wav" type="AudioStream" id=54]
+[ext_resource path="res://Sound/click_sound.wav" type="AudioStream" id=55]
+[ext_resource path="res://Images/GameUI/ModeButton.png" type="Texture" id=56]
+[ext_resource path="res://Images/GameUI/Pressed_ModeButton.png" type="Texture" id=57]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -181,7 +183,34 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=14]
-resource_name = "Mode"
+resource_name = "Battle-Field"
+tracks/0/type = "value"
+tracks/0/path = NodePath("OnReady/Game:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Click"
+tracks/0/type = "value"
+tracks/0/path = NodePath("OnReady/Click:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="StyleBoxFlat" id=15]
 content_margin_left = 64.0
@@ -967,7 +996,6 @@ visible = false
 polygon = PoolVector2Array( -30.2, -111.6, -31.3, -109.5, -32.4, -109.5, -39.5, -98.8, -39.5, -94.9, -38.8, -91.5, -37.8, -91.5, -23.5, -93.9, -23.5, -91.1, -16.5, -81.5, -11, -81.5, -12.9, -91.5, -10.5, -91.5, -2.5, -101.5, 1, -101.5, 8.6, -97.3, 15.2, -102.9, 17.5, -101.8, 17.5, -100.6, 23.5, -96.6, 23.5, -92.8, 30.5, -75.9, 30.5, -70.4, 29.7, -63.5, 30.9, -63.5, 51.5, -53.8, 51.5, -44.9, 52.2, -41.5, 62.5, -33.5, 62.5, -31.1, 79.5, -7.1, 79.5, 41.5, 75.7, 44.6, 79.5, 55, 79.5, 57.5, 77.5, 57.5, 71.5, 66, 71.5, 74.7, 65.2, 108.5, 52.8, 108.5, 48.5, 109.2, 48.5, 110.1, 42.5, 118.5, 27, 118.5, 22.6, 116.3, 13.9, 118.5, 11.5, 118.5, 11.5, 105.5, 9.6, 81.4, 4.5, 77.5, 4.5, 66.5, -3.3, -3.5, -71.5, -6.5, -71.5, -8.7, -74.5, -11.7, -74.5, -21.5, -79.5, -58.6, -79.5, -109.5, -69.3, -118.5, -63.9, -118.5, -34.5, -118.5 )
 
 [node name="ZCamera" type="AnimationPlayer" parent="Game"]
-editor/display_folded = true
 anims/Zoom = SubResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="Game/ZCamera"]
@@ -985,8 +1013,9 @@ editor_draw_drag_margin = true
 stream = ExtResource( 50 )
 
 [node name="OnReady" type="AnimationPlayer" parent="Game"]
-autoplay = "Mode"
-anims/Mode = SubResource( 14 )
+autoplay = "Battle-Field"
+anims/Battle-Field = SubResource( 14 )
+anims/Click = SubResource( 17 )
 
 [node name="Mode" type="RichTextLabel" parent="Game/OnReady"]
 margin_left = 847.0
@@ -1022,12 +1051,20 @@ margin_bottom = 1010.44
 texture = ExtResource( 53 )
 
 [node name="PlayerId" type="RichTextLabel" parent="Game/OnReady"]
-margin_left = 834.0
+margin_left = 829.0
 margin_top = 936.0
 margin_right = 1075.0
 margin_bottom = 968.0
 custom_styles/normal = SubResource( 15 )
 custom_fonts/normal_font = SubResource( 16 )
+text = "Player 0"
+
+[node name="Game" type="AudioStreamPlayer" parent="Game/OnReady"]
+stream = ExtResource( 54 )
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="Game/OnReady"]
+stream = ExtResource( 55 )
 
 [node name="Button" type="TextureButton" parent="."]
 margin_left = 1095.55
@@ -1035,8 +1072,8 @@ margin_top = 873.187
 margin_right = 1261.55
 margin_bottom = 1044.19
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 54 )
-texture_pressed = ExtResource( 55 )
+texture_normal = ExtResource( 56 )
+texture_pressed = ExtResource( 57 )
 [connection signal="input_event" from="Game/0/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "0" ]]
 [connection signal="input_event" from="Game/0/404044040/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "0" ]]
 [connection signal="input_event" from="Game/1/Area2D" to="Game" method="_on_Area2D_input_event" binds= [ "1" ]]

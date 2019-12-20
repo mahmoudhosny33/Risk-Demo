@@ -139,6 +139,16 @@ namespace RiskGame.Scripts
             PlayerLabel.Text = Player;
         }
 
+        ////////////////////////////////Sound/////////////////////////////////////////
+        public void ClikedSound()
+        {
+            AnimationPlayer sound = GetNode("OnReady") as AnimationPlayer;
+
+            sound.Play("Click");
+        }
+
+
+
         /////////////////////////////// Colors ////////////////////////////////////////
         public void ToLight(string name)
         {
