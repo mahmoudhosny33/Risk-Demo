@@ -151,6 +151,7 @@ namespace RiskGame.Scripts
                         int f = rand.Next(0, 13);
                         countries[arr2[i][f]].troops += 1;
                         players[i].notusedTroops -= 1;
+                        
                     }
                 }
             }
@@ -160,6 +161,7 @@ namespace RiskGame.Scripts
         {
             countries[int.Parse(name)].owner = players[id];
             countries[int.Parse(name)].troops++;
+            countries[int.Parse(name)].numberOfTroopsTxt.AddText(countries[int.Parse(name)].troops.ToString());
             players[id].countries++;
             players[id].notusedTroops--;
             ToDark(name);
@@ -183,7 +185,7 @@ namespace RiskGame.Scripts
                 players[turn % 3].usedTroops += b;
                 countries[a].troops += b;
             }
-
+            countries[a].numberOfTroopsTxt.Text = (countries[a].troops.ToString());
 
         }
         private void Attack(int Attacker, int Attacked)

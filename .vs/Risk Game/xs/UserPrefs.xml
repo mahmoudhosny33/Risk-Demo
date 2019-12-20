@@ -1,9 +1,7 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Game.cs">
     <Files>
-      <File FileName="Scripts/Game.cs" Line="53" Column="1" />
-      <File FileName="Scripts/Player.cs" Line="7" Column="6" />
-      <File FileName="Scripts/Country.cs" Line="15" Column="31" />
+      <File FileName="Scripts/Game.cs" Line="188" Column="42" />
       <File FileName="Scripts/AnimationsMaker.cs" Line="155" Column="49" />
       <File FileName="Scripts/MapBuilder.cs" Line="8" Column="18" />
     </Files>
@@ -12,7 +10,9 @@
         <State name="__root__">
           <Node name="Risk Game" expanded="True">
             <Node name="Risk Game" expanded="True">
-              <Node name="Scripts" expanded="True" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Game.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

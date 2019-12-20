@@ -282,7 +282,8 @@ material = SubResource( 2 )
 position = Vector2( -627.49, -371.307 )
 texture = ExtResource( 3 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/0"]
@@ -318,7 +319,8 @@ material = SubResource( 2 )
 position = Vector2( -478.934, -392.179 )
 texture = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/1"]
@@ -333,7 +335,8 @@ material = SubResource( 2 )
 position = Vector2( -530.499, -325.881 )
 texture = ExtResource( 6 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/2"]
@@ -348,7 +351,8 @@ material = SubResource( 2 )
 position = Vector2( -442.102, -301.326 )
 texture = ExtResource( 7 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/3"]
@@ -363,7 +367,8 @@ material = SubResource( 2 )
 position = Vector2( -537.865, -227.219 )
 texture = ExtResource( 8 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/4"]
@@ -379,7 +384,8 @@ material = SubResource( 2 )
 position = Vector2( -350.021, -309.92 )
 texture = ExtResource( 9 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/5"]
@@ -395,7 +401,8 @@ material = SubResource( 2 )
 position = Vector2( -444.496, -215.446 )
 texture = ExtResource( 10 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/6"]
@@ -411,7 +418,8 @@ material = SubResource( 2 )
 position = Vector2( -558.737, -129.443 )
 texture = ExtResource( 11 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/7"]
@@ -426,7 +434,8 @@ material = SubResource( 2 )
 position = Vector2( -450.149, -43.0161 )
 texture = ExtResource( 12 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/8"]
@@ -442,7 +451,8 @@ material = SubResource( 2 )
 position = Vector2( -485.854, 64.6432 )
 texture = ExtResource( 13 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/9"]
@@ -457,7 +467,8 @@ material = SubResource( 2 )
 position = Vector2( -399.266, 73.6897 )
 texture = ExtResource( 14 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/10"]
@@ -472,7 +483,8 @@ material = SubResource( 2 )
 position = Vector2( -489.731, 241.696 )
 texture = ExtResource( 15 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/11"]
@@ -488,7 +500,8 @@ material = SubResource( 2 )
 position = Vector2( -259.046, -403.228 )
 texture = ExtResource( 16 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/12"]
@@ -503,7 +516,8 @@ material = SubResource( 2 )
 position = Vector2( -161.073, -356.574 )
 texture = ExtResource( 17 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/13"]
@@ -518,7 +532,8 @@ material = SubResource( 2 )
 position = Vector2( -208.893, -273.763 )
 texture = ExtResource( 18 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/14"]
@@ -533,7 +548,8 @@ material = SubResource( 2 )
 position = Vector2( -46.5467, -355.408 )
 texture = ExtResource( 19 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/15"]
@@ -548,7 +564,8 @@ material = SubResource( 2 )
 position = Vector2( -64.2656, -248.104 )
 texture = ExtResource( 20 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/16"]
@@ -563,7 +580,8 @@ material = SubResource( 2 )
 position = Vector2( -173.104, -161.519 )
 texture = ExtResource( 21 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/17"]
@@ -578,7 +596,8 @@ material = SubResource( 2 )
 position = Vector2( 67.5321, -285.427 )
 texture = ExtResource( 22 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/18"]
@@ -593,7 +612,8 @@ material = SubResource( 2 )
 position = Vector2( -58.8312, -165.458 )
 texture = ExtResource( 23 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/19"]
@@ -608,7 +628,8 @@ material = SubResource( 2 )
 position = Vector2( 92.5834, -62.8052 )
 texture = ExtResource( 24 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/20"]
@@ -623,7 +644,8 @@ material = SubResource( 4 )
 position = Vector2( -20.3312, -35.1686 )
 texture = ExtResource( 25 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/21"]
@@ -638,7 +660,8 @@ material = SubResource( 2 )
 position = Vector2( -127.402, 8.79712 )
 texture = ExtResource( 26 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/22"]
@@ -653,7 +676,8 @@ material = SubResource( 6 )
 position = Vector2( 57.1253, 114.379 )
 texture = ExtResource( 27 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/23"]
@@ -668,7 +692,8 @@ material = SubResource( 8 )
 position = Vector2( -32.7589, 136.367 )
 texture = ExtResource( 28 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/24"]
@@ -683,7 +708,8 @@ material = SubResource( 10 )
 position = Vector2( -10.7812, 263.34 )
 texture = ExtResource( 29 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/25"]
@@ -698,7 +724,8 @@ material = SubResource( 12 )
 position = Vector2( 143.827, 265.237 )
 texture = ExtResource( 30 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/26"]
@@ -713,7 +740,8 @@ material = SubResource( 2 )
 position = Vector2( 206.328, -335.58 )
 texture = ExtResource( 31 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/27"]
@@ -728,7 +756,8 @@ material = SubResource( 2 )
 position = Vector2( 177.169, -214.279 )
 texture = ExtResource( 32 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/28"]
@@ -743,7 +772,8 @@ material = SubResource( 2 )
 position = Vector2( 259.371, -69.8032 )
 texture = ExtResource( 33 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/29"]
@@ -758,7 +788,8 @@ material = SubResource( 2 )
 position = Vector2( 343.957, -164.126 )
 texture = ExtResource( 34 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/30"]
@@ -773,7 +804,8 @@ material = SubResource( 2 )
 position = Vector2( 257.647, -351.909 )
 texture = ExtResource( 35 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/31"]
@@ -788,7 +820,8 @@ material = SubResource( 2 )
 position = Vector2( 361.453, -400.896 )
 texture = ExtResource( 36 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/32"]
@@ -803,7 +836,8 @@ material = SubResource( 2 )
 position = Vector2( 360.286, -318.085 )
 texture = ExtResource( 37 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/33"]
@@ -818,7 +852,8 @@ material = SubResource( 2 )
 position = Vector2( 383.613, -238.773 )
 texture = ExtResource( 38 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/34"]
@@ -833,7 +868,8 @@ material = SubResource( 2 )
 position = Vector2( 462.925, -340.245 )
 texture = ExtResource( 39 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/35"]
@@ -868,7 +904,8 @@ material = SubResource( 2 )
 position = Vector2( 530.573, -234.107 )
 texture = ExtResource( 41 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/36"]
@@ -883,7 +920,8 @@ material = SubResource( 2 )
 position = Vector2( 384.171, -28.981 )
 texture = ExtResource( 42 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/37"]
@@ -898,7 +936,8 @@ material = SubResource( 2 )
 position = Vector2( 332.868, 116.171 )
 texture = ExtResource( 43 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="42" type="Sprite" parent="Game/38"]
@@ -949,7 +988,8 @@ material = SubResource( 2 )
 position = Vector2( 553.882, 79.2828 )
 texture = ExtResource( 47 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/39"]
@@ -964,7 +1004,8 @@ material = SubResource( 2 )
 position = Vector2( 504.297, 275.355 )
 texture = ExtResource( 48 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/40"]
@@ -979,7 +1020,8 @@ material = SubResource( 2 )
 position = Vector2( 587.007, 267.601 )
 texture = ExtResource( 49 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Area2D" type="Area2D" parent="Game/41"]

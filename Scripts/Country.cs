@@ -28,7 +28,7 @@ namespace RiskGame.Scripts
                 numberOfTroopsTxt.AddFontOverride("font",font);
                 numberOfTroopsTxt.PushAlign(RichTextLabel.Align.Center);
 
-                numberOfTroopsTxt.AddText(troops.ToString()); 
+                numberOfTroopsTxt.Text = (troops.ToString()); 
                 numberOfTroops.Texture = texture;
                 owner = null;
                 troops = 0;
@@ -39,6 +39,7 @@ namespace RiskGame.Scripts
             
                 enemy.owner = newone;
                 enemy.troops = sol;
+                enemy.numberOfTroopsTxt.Text = (sol.ToString());
             __Init__AttackAnimation();
 
             }
@@ -60,11 +61,16 @@ namespace RiskGame.Scripts
                 RollDice();
 
                 GD.Print($"Attacker Dice: {Attacker_Dice} , Attacked Dice {Attacked_Dice} ");
-                    if (Attacker_Dice > Attacked_Dice)
-                    {
-                        enemy.troops--;
-                    }
-                    else country.troops--;
+                if (Attacker_Dice > Attacked_Dice)
+                {
+                    enemy.troops--;
+                    enemy.numberOfTroopsTxt.Text = (enemy.troops.ToString());
+                }
+                else 
+                { 
+                country.troops--;
+                    enemy.numberOfTroopsTxt.Text = (country.troops.ToString());
+                }
                 }
 
 
@@ -83,6 +89,7 @@ namespace RiskGame.Scripts
                     LoseCountry(country.owner,ref enemy, f);
                     res = true;
                     country.troops -= f;
+                country.numberOfTroopsTxt.Text = (country.troops.ToString());
                     country.owner.countries++;
                 }
 
