@@ -109,9 +109,30 @@ namespace RiskGame.Scripts
         }
         public void ChangeMode(string Mode)
         {
+            string[] Modes = { "Draft", "Attack", "Fortify" };
+
+            Texture Active = ResourceLoader.Load("res://Images/GameUI/Layer.png") as Texture;
+            Texture None = ResourceLoader.Load("res://Images/GameUI/Layer2.png") as Texture;
+
             RichTextLabel modeTextLabel = GetNode("OnReady/Mode") as RichTextLabel;
             modeTextLabel.Text = Mode;
+
+
+
+            foreach(string mode in Modes)
+            {
+                TextureRect ModeMarker = GetNode($"OnReady/{mode}Marker") as TextureRect;
+                if(mode==Mode)
+                    ModeMarker.SetTexture(Active);
+
+                else
+                    ModeMarker.SetTexture(None);
+            }
+
+
+
         }
+
         /////////////////////////////// Colors ////////////////////////////////////////
         public void ToLight(string name)
         {

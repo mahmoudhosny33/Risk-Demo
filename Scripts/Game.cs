@@ -20,9 +20,9 @@ namespace RiskGame.Scripts
         { 
         
             /* 
-             *****************************************************************************************
-             * Please be careful of functional dependencies So we can't swap the places of functions**
-             * ***************************************************************************************            
+             **************************************************************************************************
+             * Please be careful of functions dependencies So we can't swap the places of animation functions**
+             * ************************************************************************************************            
             */
             turn = 0;
             curplayer = new Player();
@@ -144,7 +144,7 @@ namespace RiskGame.Scripts
 
         private void Draft(int a)
         {
-            ChangeMode("Draft");
+
             GD.Print("enter  num of troops ");
             //////////should take the number from gui
             int b = 1;
@@ -204,7 +204,7 @@ namespace RiskGame.Scripts
         }
         private void Fortify(int a, int b)
         {
-            ChangeMode("Fortify");
+
 
             /////////should read the input from gui
 
@@ -250,26 +250,40 @@ namespace RiskGame.Scripts
         }
         private void _on_Button_pressed()
         {
+            
 
             if (this.mode == 0 && players[this.turn].notusedTroops == 0)
             {
 
                 this.mode = 1;
+
+                ChangeMode("Attack");
+
                 Rest();
 
             }
             else if (this.mode == 1)
             {
+
                 this.mode = 2;
+
+                ChangeMode("Fortify");
+
                 selected = -1;
                 Rest();
+
 
             }
             else if (this.mode == 2)
             {
+
                 this.mode = 0;
+
+                ChangeMode("Draft");
+
                 this.turn = (this.turn + 1) % 3;
                 Rest();
+
                 StartTurn();
             }
 
@@ -297,7 +311,7 @@ namespace RiskGame.Scripts
                         {
                             if (countries[map[int.Parse(name)][i]].owner != players[turn])
                             {
-                                ChangeMode("Attack");
+                               
                                 // ToLight(map[int.Parse(name)][i].ToString());
 
                                 //  Zoom(GetGlobalMousePosition(), name);
@@ -332,18 +346,18 @@ namespace RiskGame.Scripts
                             countries[selected].Attack(countries[n]);
                            
                         }
-                       // Rest();
+
                         else Rest();
                     }
 
                 }
-               // Rest();
+               
             }
           
 
             else if (Input.IsActionPressed("LM") && this.mode == 2)
             {
-                ChangeMode("Fortify");
+
                 int n = int.Parse(name);
                 if (selected == -1)
                 {
