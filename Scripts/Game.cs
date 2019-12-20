@@ -155,13 +155,17 @@ namespace RiskGame.Scripts
                     }
                 }
             }
+            for(int i = 0; i < 42; i++)
+            {
+                countries[i].numberOfTroopsTxt.Text = countries[i].troops.ToString();
+            }
         }
 
         public void AddCountry(int id, string name)
         {
             countries[int.Parse(name)].owner = players[id];
             countries[int.Parse(name)].troops++;
-            countries[int.Parse(name)].numberOfTroopsTxt.AddText(countries[int.Parse(name)].troops.ToString());
+            countries[int.Parse(name)].numberOfTroopsTxt.Text=(countries[int.Parse(name)].troops.ToString());
             players[id].countries++;
             players[id].notusedTroops--;
             ToDark(name);
@@ -244,6 +248,7 @@ namespace RiskGame.Scripts
                 countries[a].troops -= c;
                 countries[b].troops += c;
             }
+            countries[a].numberOfTroopsTxt.Text = countries[a].troops.ToString();
         }
         private void SelectFriends(int cur)
         {
@@ -275,7 +280,7 @@ namespace RiskGame.Scripts
             players[turn % 3].notusedTroops += newtroops;
             Rest();
 
-
+            
         }
         private void _on_Button_pressed()
         {

@@ -30,7 +30,6 @@ namespace RiskGame.Scripts
                 numberOfTroopsTxt.AddFontOverride("normal_font",font);
                 numberOfTroopsTxt.PushAlign(RichTextLabel.Align.Center);
 
-                numberOfTroopsTxt.Text = (troops.ToString()); 
                 numberOfTroops.Texture = texture;
                 owner = null;
                 troops = 0;
