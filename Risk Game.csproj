@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EDC537FD-DAB4-44D0-809F-E3BB0733BB0B}</ProjectGuid>
+    <ProjectGuid>{49ED0EB0-2314-4249-872D-7EEA04E1DCE4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
     <RootNamespace>RiskGame</RootNamespace>
@@ -51,10 +51,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Game.cs" />
-    <Compile Include="Scripts\Player.cs" />
-    <Compile Include="Scripts\MapBuilder.cs" />
-    <Compile Include="Scripts\AnimationsMaker.cs" />
-    <Compile Include="Scripts\Country.cs" />
+    <Compile Include="Scripts\AnimationsMaker.cs">
+      <Link>Scripts\AnimationsMaker.cs</Link>
+    </Compile>
+    <Compile Include="Scripts\Country.cs">
+      <Link>Scripts\Country.cs</Link>
+    </Compile>
+    <Compile Include="Scripts\MapBuilder.cs">
+      <Link>Scripts\MapBuilder.cs</Link>
+    </Compile>
+    <Compile Include="Scripts\Player.cs">
+      <Link>Scripts\Player.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

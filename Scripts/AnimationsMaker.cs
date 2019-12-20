@@ -194,7 +194,6 @@ namespace RiskGame.Scripts
             if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkRed)
             {
                 players[countries[int.Parse(name)].owner.id].color = Colors.Red;
-
             }
             else if (players[countries[int.Parse(name)].owner.id].color == Colors.DarkGreen)
             {
@@ -247,14 +246,18 @@ namespace RiskGame.Scripts
 
         public void Rest()
         {
+
+            AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
+            ZCamera.Stop();
+            AnimationPlayer animation = GetNode("Attack") as AnimationPlayer;
+            animation.Stop(false);
+            GameSound(true);
             for (int i = 0; i < 42; i++)
             {
 
                 ToDark(i.ToString());
-                
+
             }
-            AnimationPlayer ZCamera = GetNode("ZCamera") as AnimationPlayer;
-            ZCamera.Stop();
         }
 
     }

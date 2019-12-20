@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="Scripts/Country.cs">
     <Files>
-      <File FileName="Scripts/Game.cs" Line="1" Column="1" />
-      <File FileName="Scripts/Country.cs" Line="24" Column="35" />
+      <File FileName="Scripts/Game.cs" Line="359" Column="39" />
+      <File FileName="Scripts/AnimationsMaker.cs" Line="108" Column="21" />
+      <File FileName="Scripts/Country.cs" Line="38" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

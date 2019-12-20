@@ -36,6 +36,7 @@ namespace RiskGame.Scripts
             GameSound(true);
 
             StartTurn();
+            ReCalculateTroops();
 
         }
 
@@ -155,12 +156,15 @@ namespace RiskGame.Scripts
                     }
                 }
             }
-            for(int i = 0; i < 42; i++)
+
+        }
+        public void ReCalculateTroops()
+        {
+            for (int i = 0; i < 42; i++)
             {
                 countries[i].numberOfTroopsTxt.Text = countries[i].troops.ToString();
             }
         }
-
         public void AddCountry(int id, string name)
         {
             countries[int.Parse(name)].owner = players[id];
@@ -190,6 +194,7 @@ namespace RiskGame.Scripts
                 countries[a].troops += b;
             }
             countries[a].numberOfTroopsTxt.Text = (countries[a].troops.ToString());
+            countries[b].numberOfTroopsTxt.Text = (countries[b].troops.ToString());
 
         }
         private void Attack(int Attacker, int Attacked)
@@ -352,6 +357,7 @@ namespace RiskGame.Scripts
                                 GameSound(false);
                                // Zoom(GetGlobalMousePosition(), name);
                                 AttackAnimation(name);
+        
                             }
                         }
                     }
@@ -359,7 +365,9 @@ namespace RiskGame.Scripts
                 else
                 {
                     Rest();
-
+                    for(int i = 0; i < map[int.Parse(name)].Count; i++){
+                        ToDark(i.ToString());
+                    }
                     bool allow = false;
                     int n = int.Parse(name);
                     for (int i = 0; i < map[selected].Count; i++)
@@ -373,6 +381,8 @@ namespace RiskGame.Scripts
                     if (countries[int.Parse(name)].owner == players[turn])
                     {
                         Rest();
+                        GameSound(true);
+
                         selected = -1;
                     }
                     else
@@ -389,7 +399,6 @@ namespace RiskGame.Scripts
 
                 }
 
-               
             }
           
 

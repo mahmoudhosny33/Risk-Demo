@@ -41,6 +41,8 @@ namespace RiskGame.Scripts
                 enemy.owner = newone;
                 enemy.troops = sol;
                 enemy.numberOfTroopsTxt.Text = (sol.ToString());
+            enemy.numberOfTroops.Modulate = newone.color.Lightened(0.3f);
+            Rest();
             __Init__AttackAnimation();
 
             }
@@ -93,8 +95,9 @@ namespace RiskGame.Scripts
                 country.numberOfTroopsTxt.Text = (country.troops.ToString());
                     country.owner.countries++;
                 }
-
-                return res;
+            ReCalculateTroops();
+            Rest();
+            return res;
             }
 
         }
