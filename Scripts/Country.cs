@@ -11,18 +11,21 @@ namespace RiskGame.Scripts
         {
 
             public int Active { get; set; } //Should be int 0 or 1 or 2
-
             public Player owner = new Player();
             public int troops;
+            public Texture texture = ResourceLoader.Load("res://Images/GameUI/Number.png") as Texture;
+            public TextureRect numberOfTroops = new TextureRect();
+
             public Country()
             {
+                numberOfTroops.Texture = texture;
                 owner = null;
                 troops = 0;
             }
         }
             public void LoseCountry(Player newone,ref Country enemy, int sol)
             {
-
+            
                 enemy.owner = newone;
                 enemy.troops = sol;
             __Init__AttackAnimation();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Godot;
 namespace RiskGame.Scripts
 {
     public partial class Game
@@ -92,6 +93,11 @@ namespace RiskGame.Scripts
             //40,39
             map[41] = new List<int>() { 40, 39 };
 
+
+        }
+
+        public void DrawCircle()
+        {
 
         }
     }

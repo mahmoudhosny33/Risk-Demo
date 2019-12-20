@@ -18,7 +18,7 @@ namespace RiskGame.Scripts
         private int mode = 0;
         public override void _Ready()
         { 
-        
+            
             /* 
              **************************************************************************************************
              * Please be careful of functions dependencies So we can't swap the places of animation functions**
@@ -32,11 +32,26 @@ namespace RiskGame.Scripts
             Disturb();
             __Init__AttackAnimation();
             __initZoom();
-
+            DrawTroops();
             GameSound(true);
 
             StartTurn();
 
+        }
+
+        public void DrawTroops()
+        {
+
+            var Scene = GetNode(".");
+
+            for( int index = 0; index < 42; index++)
+            {
+                countries[index].numberOfTroops.RectPosition = (GetNode(index.ToString()) as Sprite).GetPosition() - new Vector2(25,25);
+                countries[index].numberOfTroops.Modulate = countries[index].owner.color.Lightened(0.3f);
+                Scene.AddChild(countries[index].numberOfTroops);
+            }
+            countries[38].numberOfTroops.RectPosition += new Vector2(45, 0);
+            countries[27].numberOfTroops.RectPosition += new Vector2(-15, 0);
         }
 
         private void CheckMap()
@@ -141,6 +156,7 @@ namespace RiskGame.Scripts
             players[id].countries++;
             players[id].notusedTroops--;
             ToDark(name);
+            //GD.Print(id);
 
         }
 
