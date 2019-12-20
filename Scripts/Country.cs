@@ -15,9 +15,20 @@ namespace RiskGame.Scripts
             public int troops;
             public Texture texture = ResourceLoader.Load("res://Images/GameUI/Number.png") as Texture;
             public TextureRect numberOfTroops = new TextureRect();
+            public RichTextLabel numberOfTroopsTxt = new RichTextLabel();
 
             public Country()
             {
+                DynamicFont font = new DynamicFont();
+                font.FontData = ResourceLoader.Load("res://Fonts/good times rg.ttf") as DynamicFontData;
+                font.Size = 20;
+                font.UseFilter = true;
+
+                numberOfTroopsTxt.RectSize = new Vector2(30, 30);
+                numberOfTroopsTxt.AddFontOverride("font",font);
+                numberOfTroopsTxt.PushAlign(RichTextLabel.Align.Center);
+
+                numberOfTroopsTxt.AddText(troops.ToString()); 
                 numberOfTroops.Texture = texture;
                 owner = null;
                 troops = 0;

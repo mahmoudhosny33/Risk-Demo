@@ -1007,7 +1007,6 @@ __meta__ = {
 }
 
 [node name="OnReady" type="AnimationPlayer" parent="Game"]
-editor/display_folded = true
 autoplay = "Battle-Field"
 anims/Battle-Field = SubResource( 14 )
 anims/Click = SubResource( 15 )
