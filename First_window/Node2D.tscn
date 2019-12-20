@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="OptionButton" type="OptionButton" parent="Sprite"]
+margin_left = 304.0
+margin_top = 156.0
+margin_right = 752.0
+margin_bottom = 394.0
+
+[node name="CheckButton" type="CheckButton" parent="Sprite"]
+margin_left = -30.4
+margin_top = 68.4001
+margin_right = 248.6
+margin_bottom = 242.4
+
+[node name="CheckBox" type="CheckBox" parent="Sprite"]
+margin_right = 47.0
+margin_bottom = 120.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 77.8498
+margin_top = 140.7
+margin_right = 154.85
+margin_bottom = 164.7
+text = "music"

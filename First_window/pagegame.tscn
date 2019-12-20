@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://playbutton/pagegame.cs" type="Script" id=1]
+[ext_resource path="res://logo 1.jpg" type="Texture" id=2]
+[ext_resource path="res://fcd.ogg.ogg" type="AudioStream" id=3]
+
+[node name="pagegame" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="dd" type="Sprite" parent="."]
+position = Vector2( 34, 31 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 346.979
+margin_top = 3.25803
+margin_right = 358.979
+margin_bottom = 23.258
+text = "close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
